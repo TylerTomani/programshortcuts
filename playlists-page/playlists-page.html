@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>playlists-page</title>
+    <link rel="stylesheet" href="../css/main-styles.css">
+    <link rel="stylesheet" href="../css/youtube.css">
+    <link rel="stylesheet" href="../css/flex.css">
+    <link rel="stylesheet" href="../css/margin-padding.css">
+    <link rel="stylesheet" href="../css/background-borders.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="module" src="../js/showAside.js" defer></script>
+    <script type="module" src="../js/letterFocus.js" defer></script>
+</head>
+<body>
+    <header id="mainMastheadContainer" class="masthead-container">
+        <div class="container ">
+            <div class="showSideBtnContainer">
+                <button id="toggleAsideBtn" tabindex="0">
+                    <i id="" class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            <h1  class="title ">
+                ProgramShorcuts 
+            </h1>
+        </div>
+        <div id="mainSearch" class="">
+            <form class="search-query" action="/submit-form" method="post">
+                <input type="text" tabindex="0"  placeholder="Search">
+            </form>
+            <div id="searchBtnContainer">
+                <button>
+                    <i id="searchBtn" class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <aside id="asideMenu" class="">
+        <header class="masthead-container ">
+            <div class="container ">
+                <div class="showSideBtnContainer">
+                    <button id="asideBtn" tabindex="0">
+                        <i id="" class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+                <h1  class="title ">
+                    ProgramShorcuts - Playlist
+                </h1>
+            </div>
+            
+        </header>
+        <div id="asideSearch" class="">
+            <form class="search-query" action="/submit-form" method="post">
+                <input type="text" tabindex="0"  placeholder="Search">
+            </form>
+            <div id="searchBtnContainer">
+                <button>
+                    <i id="searchBtn" class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+        <ul>
+            <li><a id="homeAside" href="../index.html">home</a></li>
+            <li><a id="videosAside" href="../videos-page/videos-page.html">videos</a></li>
+            <li><a id="playListAside" href="../playlists-page/playlists-page.html">playlist</a></li>
+            <li><a href="#">documentations</a></li>
+            <li><a href="#">about</a></li>
+        </ul>
+    </aside>
+    <div id="content">
+        <header id="contentHeader" class="fc ">
+            <div tabindex="-1" class="iframe-container">
+                <!-- <iframe  src="https://www.youtube.com/embed/AdMuZses96Q" title="25 Basic Mac Keyboard Shortcuts" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                 <img src="../img/programShortcutsPageSearch.png" alt="">
+            </div>
+            <div class="description-container ml5 p1">
+                <h2><a target="_blank" href="https://www.youtube.com/@programshortcuts/playlists">Program Shortcuts Youtube Channel</a> </h2>
+                <!-- <h4>Youtube Essential Shotcuts</h4> -->
+                <p>
+                    Have the video to the left be <q>Youtube Essential Video</q>, (maybe) if clicked
+                    shortcuts appear below
+                </p>
+            </div>
+            <div id="programShortcutsPageSearch">
+                <!-- <img src="img/programShortcutsPageSearch.png" alt=""> -->
+            </div>
+        </header>
+        <main id="mainContent" class="fcol bborder2 ">
+            <div class="playlists-container ">
+                <h3 tabindex="0" id="playlistsTitle">Playlists</h3>
+                <div class="playlists-collection ">
+                    <a autofocus id="01macEssentialShortcuts" class="playlist-thumbnail " 
+                    href="playlistPages/01-macEssentialPlaylist/01-macEssentialShortcuts.html">
+                        <header class="playlist-collection-header ">
+                            <h4>Mac Essential Shorcuts</h4>
+                        </header>
+                        <img alt="" class="" src="https://i.ytimg.com/vi/wIHcYqeZ0rg/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAfqmDTBuNxS1CttxFxt-rEpnD9Rw">
+                        <div class="overlays fc je ">
+                            <div class="overlay-txt mr5">
+                                <span>1 video</span>
+                            </div>           
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </main>
+
+    </div>
+    
+</body>
+</html>
