@@ -1,8 +1,25 @@
+:root{
+    --width-side-active: 190px;
+    --width-side-bar: 50px;
+}
 .side-bar {
     position: relative;
-    width: 50px;
+    width: var(--width-side-bar);
     border-right: 1px solid black;
     background-color: rgb(52, 68, 114);
+    height: 100vh
+}
+.side-bar.active {
+    width: var(--width-side-active);
+}
+
+.side-bar ~ .main-content{
+    width: calc(100vw - var(--width-side-bar));
+    border: 2px solid blue;
+}
+.side-bar.active ~ .main-content{
+    width: calc(100vw - var(--width-side-active));
+    border: 2px solid blue;
 }
 .side-bar .top {
     display: flex;
@@ -12,13 +29,17 @@
 .side-bar.active .top {
     flex-direction: row;   
 }
-.top img {
-    height: 50px;
-    width: 50px;
-    border-radius: 100%;
+.side-bar.active img {
+}
+.side-bar .top img {
+    display: none;
 }
 .side-bar.active .top img {
     position: absolute;
+    display: inline-flex;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
     left: 50%;
     height: 100px;
     width: 100px;
@@ -26,24 +47,16 @@
 }
 .top i {
     height: 50px;
-    /* width: 100px; */
+    margin-left: 5%;
+    margin-top: 5%;
+    transform: translateY(10%);
     font-size: 2rem;
     color: #eee;
 }
-.side-bar.active {
-    width: 250px;
-}
 
-.side-bar ~ .main-content{
-    width: calc(100vw - 50px);
-    border: 2px solid blue;
-}
-.side-bar.active ~ .main-content{
-    width: calc(100vw - 250px);
-    border: 2px solid blue;
-}
 .side-bar ul {
-    /* mar */
+    margin-top: 25%;
+    margin-left: 15%;
 }
 .side-bar ul li{
 
@@ -65,6 +78,9 @@
 }
 .side-bar.active .tooltip {
     display: none;
+}
+.side-bar.active a:active ~ .tooltip,.side-bar.active a:focus ~ .tooltip {
+    display: none
 }
 .side-bar a:active ~ .tooltip,.side-bar a:focus ~ .tooltip {
     display: inline-flex;
