@@ -1,5 +1,5 @@
 :root{
-    --width-side-active: 190px;
+    --width-side-active: 150px;
     --width-side-bar: 50px;
 }
 .side-bar {
@@ -29,8 +29,6 @@
 .side-bar.active .top {
     flex-direction: row;   
 }
-.side-bar.active img {
-}
 .side-bar .top img {
     display: none;
 }
@@ -40,7 +38,7 @@
     height: 50px;
     width: 50px;
     border-radius: 100%;
-    left: 50%;
+    right: 0;
     height: 100px;
     width: 100px;
     border-radius: 100%;
@@ -55,14 +53,33 @@
 }
 
 .side-bar ul {
-    margin-top: 25%;
-    margin-left: 15%;
+    margin-top: 100%;
+    margin-left: 25%;
+}
+.side-bar ul {
+    margin-top: 50%;
 }
 .side-bar ul li{
-
+    list-style: none;
+    line-height: 3;
+}
+.side-bar ul li a{
+    display: inline-block;
+    width: 85%;
+}
+.side-bar ul li a:hover,
+.side-bar ul li a:active,.side-bar ul li a:focus,
+.side-bar ul li a:hover .nav-item,
+.side-bar ul li a:active .nav-item,.side-bar ul li a:focus .nav-item,
+.side-bar ul li a:hover i,
+.side-bar ul li i.nav-item,.side-bar ul li a:focus i{
+    background-color: white;
+    color: black;
 }
 .side-bar ul i {
+    padding-left: 5%;
     font-size: 1.5rem;
+    height: 100%;
     color: #eee;
 }
 .side-bar .nav-item {
@@ -70,8 +87,10 @@
 }
 
 .side-bar.active .nav-item {
+    height: 100%;
     display: inline-flex;
     color: white;
+    margin-left: 5%;
 }
 .side-bar .tooltip {
     display: none;
@@ -82,8 +101,9 @@
 .side-bar.active a:active ~ .tooltip,.side-bar.active a:focus ~ .tooltip {
     display: none
 }
+.side-bar a:hover ~ .tooltip,
 .side-bar a:active ~ .tooltip,.side-bar a:focus ~ .tooltip {
     display: inline-flex;
     color: black;
-    transform: translate(150%,-50%);
+    transform: translate(150%,-100%);
 }
