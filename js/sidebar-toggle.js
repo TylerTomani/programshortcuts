@@ -4,9 +4,15 @@ const sideBar = document.querySelector('.side-bar')
 // sideBarBtn.onClick = function(){
 //     toggleSideBar()
 // }
-
-sideBarBtn.addEventListener('click', e => {
-        toggleSideBar()
+function toggleSideBar(){
+    sideBar.classList.toggle('active')
+}
+[sideBarBtn, sideBar].forEach(el => {
+    el.addEventListener('click', e => {
+        if(e.target == sideBar){
+            toggleSideBar()
+        }
+    })
 })
 sideBarBtn.addEventListener('keydown', e => {
     let letter = e.key.toLowerCase() 
@@ -15,6 +21,12 @@ sideBarBtn.addEventListener('keydown', e => {
     }
 })
 
-const toggleSideBar = function(){
-    sideBar.classList.toggle('active')
-}
+addEventListener('keydown', e => {
+    let letter = e.key.toLowerCase()
+    if(letter == 'a'){
+        toggleSideBar()
+    }
+    
+    
+})
+
