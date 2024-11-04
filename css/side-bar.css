@@ -1,5 +1,5 @@
 :root{
-    --width-side-active: 150px;
+    --width-side-active: 100px;
     --width-side-bar: 50px;
 }
 .side-bar {
@@ -12,14 +12,13 @@
 .side-bar.active {
     width: var(--width-side-active);
 }
-
 .side-bar ~ .main-content{
     width: calc(100vw - var(--width-side-bar));
     /* border: 2px solid blue; */
 }
 .side-bar.active ~ .main-content{
     width: calc(100vw - var(--width-side-active));
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
 }
 .side-bar .top {
     display: flex;
@@ -32,6 +31,10 @@
 .side-bar .top img {
     display: none;
 }
+#sideBarBtn{
+    position: relative;
+    z-index: 10
+}
 .side-bar.active .top img {
     position: absolute;
     display: inline-flex;
@@ -39,8 +42,8 @@
     width: 50px;
     border-radius: 100%;
     right: 0;
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
     border-radius: 100%;
 }
 .top i {
@@ -102,9 +105,24 @@
 .side-bar.active a:active ~ .tooltip,.side-bar.active a:focus ~ .tooltip {
     display: none
 }
-.side-bar a:hover ~ .tooltip,
+/* .side-bar a:hover ~ .tooltip,
 .side-bar a:active ~ .tooltip,.side-bar a:focus ~ .tooltip {
     display: inline-flex;
     color: black;
     transform: translate(150%,-100%);
+} */
+
+@media screen and (max-width:700px) {
+    .side-bar.active a:active ~ .tooltip,.side-bar.active a:focus ~ .tooltip {
+        display: none
+    }
+    /* *{background-color: blue;} */
+    .side-bar a:hover ~ .tooltip,
+    .side-bar a:active ~ .tooltip,
+    .side-bar a:focus ~ .tooltip {
+        display: inline-flex;
+        color: lightslategray;
+        /* background-color: white; */
+        transform: translate(102%,-100%);
+    }   
 }

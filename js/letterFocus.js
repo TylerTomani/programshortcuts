@@ -1,4 +1,5 @@
 const macEssentialShortcuts = document.getElementById('macEssentialShortcuts')
+const mainContent = document.getElementById('main-content')
 const tbd = document.getElementById('tbd')
 const mainSearchQuery = document.querySelector('#mainSearch > .search-query > input')
 const asideSearchQuery = document.querySelector('#asideSearch > .search-query > input')
@@ -34,7 +35,7 @@ function navMainFocus(letter){
             homeAside.focus()
             break
         case 'm':
-            // macEssentialShortcuts.focus()
+            mainContent.focus()
             break
         case 'p':
             playlistsAside.focus()
