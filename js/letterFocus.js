@@ -1,5 +1,5 @@
 const macEssentialShortcuts = document.getElementById('macEssentialShortcuts')
-const mainContent = document.getElementById('main-content')
+const mainContent = document.querySelector('.main-content')
 const tbd = document.getElementById('tbd')
 const mainSearchQuery = document.querySelector('#mainSearch > .search-query > input')
 const asideSearchQuery = document.querySelector('#asideSearch > .search-query > input')

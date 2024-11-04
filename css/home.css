@@ -1,10 +1,15 @@
-.playlists-container{
+.page-container {
     margin: 0 5%;    
 }
+.videos-container,
+.playlists-container{
+}
+.video,
 .playlist {
     display: inline-block;
 }
-.playlists-container img {
+.videos-container  img,
+.playlists-container  img {
     max-height: 250px;
     max-width: 250px;
 }
