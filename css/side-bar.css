@@ -60,6 +60,9 @@
     padding-top: 65%;
     margin-left: 25%;
 }
+.side-bar.active ul {
+    padding-top: 20%;
+}
 .side-bar ul {
     margin-top: 50%;
 }
