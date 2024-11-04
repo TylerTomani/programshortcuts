@@ -15,7 +15,7 @@
 
 .side-bar ~ .main-content{
     width: calc(100vw - var(--width-side-bar));
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
 }
 .side-bar.active ~ .main-content{
     width: calc(100vw - var(--width-side-active));
@@ -64,6 +64,7 @@
     line-height: 3;
 }
 .side-bar ul li a{
+    text-decoration: none;
     display: inline-block;
     width: 85%;
 }
