@@ -1,0 +1,10 @@
+.playlists-container{
+    
+}
+.playlist {
+    display: inline-block;
+}
+.playlists-container img {
+    max-height: 250px;
+    max-width: 250px;
+}
