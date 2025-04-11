@@ -1,12 +1,11 @@
 const sideBarBtn = document.querySelector('#sideBarBtn')
 const sideBar = document.querySelector('.side-bar')
 
-// sideBarBtn.onClick = function(){
-//     toggleSideBar()
-// }
+
 function toggleSideBar(){
     sideBar.classList.toggle('active')
 }
+toggleSideBar()
 [sideBarBtn, sideBar].forEach(el => {
     el.addEventListener('click', e => {
         if(e.target == sideBar){
