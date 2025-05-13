@@ -8,18 +8,17 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/side-bar.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="playlists-page/css/playlists-pages.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script type="module" src="js/toggle-sidebar.jsa" defer></script>
+    <script type="module" src="js/toggle-sidebar.js" defer></script>
     <script type="module" src="js/letterFocus.js" defer></script>
+    <script type="module" src="js/injectPage.js" defer></script>
 </head>
 <body>
-    <header>
-        <!-- Not sure if i'm going to use this header -->
-    </header>
-    <main>
-        <div class="side-bar">
+    <main class="page-wrapper">
+        <aside class="side-bar">
             <div class="top">
-                <i autofocus  id="sideBarBtn" tabindex="0" class="bx bx-menu"></i>
+                <i id="sideBarBtn" tabindex="0" class="bx bx-menu"></i>
                 <img src="https://yt3.googleusercontent.com/YL48Vi5XV9CemI90baOOlWR0-tsxqK1H3JvfbY4svZNSthIr_YsxKykZdyNFWBFp0I-55OdPUbQ=s160-c-k-c0x00ffffff-no-rj" alt="">
             </div>
             <ul>
@@ -32,14 +31,14 @@
                     <span class="tooltip">Home</span>
                 </li>
                 <li>
-                    <a id="videosAside" href="#">
+                    <a id="videosAside" href="videos-page/videos-page.html">
                         <i class="bx bx-video"></i>
                         <span class="nav-item">Videos</span>
                     </a>
                     <span class="tooltip">Videos</span>
                 </li>
                 <li>
-                    <a id="playlistsAside" href="#">
+                    <a autofocus  id="playlistsAside" href="playlists-page/playlists-page.html">
                         <i class="bx bx-video"></i>
                         <span class="nav-item">Playlist</span>
                     </a>
@@ -47,41 +46,40 @@
                 </li>
                 <li>
 
-                    <a id="shortcuts" href="#">
+                    <a id="codeCmdShrtCuts" href="https://tylertomani.github.io/myWebSite/webPages/codeComShortcuts/codeComShortcuts.html">
                         <img src="img/shorcut-icon.png" alt="">
                         
-                        <span class="nav-item">shorcuts</span>
+                        <span class="nav-item">code Command 
+                            <br>Shortcuts</span>
                     </a>
-                    <a id="vsCodeShortcuts" href="#">
-                        <i class="bx bx-video"></i>
-                        <span class="nav-item">Playlist</span>
-                    </a>
-                    <span class="tooltip">Playlists</span>   
+                
                 </li>
             </ul>
-        </div>
-        <div tabindex="0"  id="targetInject" class="main-content">
+        </aside>
+        <div tabindex="0"  id="mainContent" class="main-content">
             <header>
-                <h1>program shorcuts </h1>
-                <h2><sup style="font-size: 50%;">Placeholder header </sup></h2>
-                <article>
-                    <p>
-                        You can Navigate through this site quicker using shortcuts
-                    </p>
-                    <ul>
-                        <li>"H" goes to home icon, (this page)</li>
-                        <li>"V" goes to videos</li>
-                        <li>"P" goes to playlist</li>
-                        <li>"A" toggles side menu</li>
-                    </ul>
-                    <p>
-                        Use the number keys inside lessons with steps to navigate through them 
-                        quickly, (more info in page)
-                    </p>
-                </article>
+                <nav>
+                    <h1>program shorcuts </h1>
+                </nav>
             </header>
             <!-- Put the below code in home.html -->
-             <div class="page-container">
+            <div tabindex="0" class="main-landing-page">
+                 <h2><sup style="font-size: 50%;">Placeholder header </sup></h2>
+                 <article>
+                     <p>
+                         You can Navigate through this site quicker using shortcuts
+                     </p>
+                     <ul>
+                         <li>"H" goes to home icon, (this page)</li>
+                         <li>"V" goes to videos</li>
+                         <li>"P" goes to playlist</li>
+                         <li>"A" toggles side menu</li>
+                     </ul>
+                     <p>
+                         Use the number keys inside lessons with steps to navigate through them 
+                         quickly, (more info in page)
+                     </p>
+                 </article>
                  <div class="videos-container">
                      <a tabindex="0" class="video">
                          <h3>MacEssentialShortcuts 1</h3>
@@ -98,7 +96,5 @@
              </div>
         </div>
     </main>
-
-    
 </body>
 </html>
