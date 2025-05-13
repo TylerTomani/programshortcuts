@@ -1,5 +1,5 @@
 :root{
-    --width-side-active: 100px;
+    --width-side-active: 150px;
     --width-side-bar: 50px;
 }
 .side-bar {
@@ -56,12 +56,12 @@
 }
 
 .side-bar ul {
-    margin-top: 100%;
-    padding-top: 65%;
-    margin-left: 25%;
+    /* margin-top: 20%; */
+    padding-top: 5%;
+    margin-left: 15%;
 }
 .side-bar.active ul {
-    padding-top: 20%;
+    /* padding-top: 20%; */
 }
 .side-bar ul {
     margin-top: 50%;
@@ -74,6 +74,9 @@
     text-decoration: none;
     display: inline-block;
     width: 85%;
+}
+.side-bar ul >li a *{
+color: black;
 }
 .side-bar ul >li img{
     align-self: center;

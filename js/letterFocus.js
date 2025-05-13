@@ -1,82 +1,51 @@
-const macEssentialShortcuts = document.getElementById('macEssentialShortcuts')
-const mainContent = document.querySelector('.main-content')
-const tbd = document.getElementById('tbd')
-const mainSearchQuery = document.querySelector('#mainSearch > .search-query > input')
-const asideSearchQuery = document.querySelector('#asideSearch > .search-query > input')
-const youtubeEssentialShortcuts = document.getElementById('youtubeEssentialShortcuts')
-const videosTitle = document.getElementById('videosTitle')
+document.addEventListener('keydown', function (e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
 
-const homeAside = document.getElementById('homeAside')
-const videosAside = document.getElementById('videosAside')
-const playlistsAside = document.getElementById('playlistsAside')
+    const key = e.key.toLowerCase();
+    if (key.length !== 1 || !/^[a-z0-9]$/.test(key)) return;
 
-let asideFocused  = false
-let focusSearchQuery = false 
-export const showAsideBtn = document.getElementById('showAsideBtn')
-addEventListener('keydown', e => {
-    let letter = e.key
-    if(!focusSearchQuery){
-        if(!asideFocused){
-            navMainFocus(letter)
+    const allAs = [...document.querySelectorAll('[id]')].filter(a => {
+        const rect = a.getBoundingClientRect();
+        return a.offsetParent !== null && rect.width > 0 && rect.height > 0;
+    });
+    const letteredAs = allAs.filter(a => {
+        const text = a.id[0].toLowerCase();
+        return text.startsWith(key);
+    });
+
+    if (letteredAs.length === 0) return;
+
+    const active = document.activeElement;
+    const iActiveA = allAs.indexOf(active);
+    const currentIndexInFiltered = letteredAs.indexOf(active);
+
+    if (key !== window.lastLetterPressed) {
+        // New letter pressed
+        let iLetter;
+
+        if (e.shiftKey) {
+            // Shift + new letter = move UP from current position
+            const prev = [...letteredAs].reverse().find(a => allAs.indexOf(a) < iActiveA);
+            iLetter = letteredAs.indexOf(prev);
+            if (iLetter === -1) iLetter = letteredAs.length - 1;
         } else {
-            navAsideFocus(letter)
+            // New letter = move DOWN from current position
+            const next = letteredAs.find(a => allAs.indexOf(a) > iActiveA);
+            iLetter = letteredAs.indexOf(next);
+            if (iLetter === -1) iLetter = 0;
         }
 
+        letteredAs[iLetter]?.focus();
+    } else {
+        // Same letter as last key press
+        let iLetter;
+        if (e.shiftKey) {
+            iLetter = (currentIndexInFiltered - 1 + letteredAs.length) % letteredAs.length;
+        } else {
+            iLetter = (currentIndexInFiltered + 1) % letteredAs.length;
+        }
+        letteredAs[iLetter]?.focus();
     }
-})
 
-function navMainFocus(letter){
-    switch(letter){
-        case 'a':
-            // toggleAside()
-            // asideBtn.focus()
-            break
-        case 'h':
-            homeAside.focus()
-            break
-        case 'm':
-            mainContent.focus()
-            break
-        case 'p':
-            playlistsAside.focus()
-            break
-        case 's': 
-            mainSearchQuery.focus()
-            break
-        case 't': 
-            tbd.focus()
-            break
-        case 'v': 
-            videosAside.focus()
-            break
-        case 'y': 
-            // youtubeEssentialShortcuts.focus()
-            break
-        default:
-    }
-}
-function navAsideFocus(letter){
-    switch(letter){
-        case 'a':
-            asideBtn.focus()      
-            break
-        case 'h':
-            homeAside.focus()
-            break
-        case 'm':
-            break
-        case 'p':
-            playlistsAside.focus()
-            break
-        case 's': 
-            // asideSearchQuery.focus()
-            break
-        case 'v': 
-            videosAside.focus()
-            break
-        case 'y': 
-            // youtubeEssentialShortcuts.focus()
-            break
-        default:
-    }
-}
+    window.lastLetterPressed = key;
+});
