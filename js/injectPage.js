@@ -4,14 +4,16 @@ const links = document.querySelectorAll('.side-bar > ul > li > a');
 const mainLandingPage = document.querySelector('.main-landing-page');
 
 links.forEach(link => {
-    link.addEventListener('click', async (e) => {
+    if(link.hasAttribute('autofocus')){
+        fetchHtml(link.href)
+    }
+    link.addEventListener('click',   (e) => {
         e.preventDefault();
         e.stopPropagation();
 
         const anchor = e.target.closest('a');
         if (!anchor) return;
-
-         fetchHtml(anchor.getAttribute('href'));
+        fetchHtml(anchor.getAttribute('href'));
 
     });
 });
