@@ -1,28 +1,29 @@
+import { letterFocus } from "./letterFocus.js"
 const pages = document.querySelectorAll('.side-bar ul li a')
 const mainLandingPage = document.querySelector('.main-landing-page')
 pages.forEach(el => {
+    if(el.hasAttribute('autofocus')){
+        loadPageIntoMainContent(el.href)
+    }
     el.addEventListener('click', e => {
         e.preventDefault()
-        // e.stopPropagation()
-        console.log(e.target)
-        fetchHref(e.target.href)
+        loadPageIntoMainContent(e.target.href)
     })
 })
 
-function fetchHref(href){
-    fetch(href)
-        .then(response => response.text())
-        .then(html => {
-            mainLandingPage.innerHTML = html
-        })
-        .catch(error => console.log('Error fetching content:', error))
-}
-function fetchLessonHref(href) {
-    fetch(href)
-        .then(response => response.text())
-        .then(html => {
-            mainTargetDiv.innerHTML = html
-            // add functions here
-        })
-        .catch(error => console.log('Error fetching content:', error))
+
+function loadPageIntoMainContent(url) {
+  fetch(url)
+    .then(res => res.text())
+    .then(html => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+
+      const newContent = doc.body.children;
+      const mainContent = document.querySelector('.main-landing-page');
+      mainContent.innerHTML = ''; // clear existing
+      [...newContent].forEach(el => mainContent.appendChild(el));
+
+      letterFocus(); // re-init shortcut logic if needed
+    });
 }

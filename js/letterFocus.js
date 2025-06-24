@@ -1,3 +1,4 @@
+export function letterFocus(){
 document.addEventListener('keydown', function (e) {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
 
@@ -8,11 +9,8 @@ document.addEventListener('keydown', function (e) {
         const rect = a.getBoundingClientRect();
         return a.offsetParent !== null && rect.width > 0 && rect.height > 0;
     });
-    const letteredAs = allAs.filter(a => {
-        const text = a.id[0].toLowerCase();
-        return text.startsWith(key);
-    });
 
+    const letteredAs = allAs.filter(a => a.id[0]?.toLowerCase() === key);
     if (letteredAs.length === 0) return;
 
     const active = document.activeElement;
@@ -24,28 +22,27 @@ document.addEventListener('keydown', function (e) {
         let iLetter;
 
         if (e.shiftKey) {
-            // Shift + new letter = move UP from current position
             const prev = [...letteredAs].reverse().find(a => allAs.indexOf(a) < iActiveA);
             iLetter = letteredAs.indexOf(prev);
             if (iLetter === -1) iLetter = letteredAs.length - 1;
         } else {
-            // New letter = move DOWN from current position
             const next = letteredAs.find(a => allAs.indexOf(a) > iActiveA);
             iLetter = letteredAs.indexOf(next);
             if (iLetter === -1) iLetter = 0;
         }
-
+        if(!letteredAs[iLetter].hasAttribute('tabindex')){
+            letteredAs[iLetter]?.setAttribute('tabindex','0')
+        }
+        console.log(letteredAs[iLetter])
         letteredAs[iLetter]?.focus();
     } else {
-        // Same letter as last key press
-        let iLetter;
-        if (e.shiftKey) {
-            iLetter = (currentIndexInFiltered - 1 + letteredAs.length) % letteredAs.length;
-        } else {
-            iLetter = (currentIndexInFiltered + 1) % letteredAs.length;
-        }
-        letteredAs[iLetter]?.focus();
+        // Same letter pressed again — go to top-most matching element on screen
+        const sortedByTop = [...letteredAs].sort((a, b) => {
+            return a.getBoundingClientRect().top - b.getBoundingClientRect().top;
+        });
+        sortedByTop[0]?.focus();
     }
 
     window.lastLetterPressed = key;
 });
+}

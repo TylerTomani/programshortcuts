@@ -1,0 +1,6 @@
+body.dark-mode{
+    background: var(--bg-color-prime);
+}
+.dark-mode h1 {
+    color: white;
+}
