@@ -1,29 +1,30 @@
-import { letterFocus } from "./letterFocus.js"
-const pages = document.querySelectorAll('.side-bar ul li a')
-const mainLandingPage = document.querySelector('.main-landing-page')
-pages.forEach(el => {
-    if(el.hasAttribute('autofocus')){
-        loadPageIntoMainContent(el.href)
-    }
-    el.addEventListener('click', e => {
-        e.preventDefault()
-        loadPageIntoMainContent(e.target.href)
-    })
-})
+import { letterFocus } from "./letterFocus.js";
 
+const links = document.querySelectorAll('.side-bar > ul > li > a');
+const mainLandingPage = document.querySelector('.main-landing-page');
 
-function loadPageIntoMainContent(url) {
-  fetch(url)
-    .then(res => res.text())
-    .then(html => {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
+links.forEach(link => {
+    link.addEventListener('click', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
 
-      const newContent = doc.body.children;
-      const mainContent = document.querySelector('.main-landing-page');
-      mainContent.innerHTML = ''; // clear existing
-      [...newContent].forEach(el => mainContent.appendChild(el));
+        const anchor = e.target.closest('a');
+        if (!anchor) return;
 
-      letterFocus(); // re-init shortcut logic if needed
+         fetchHtml(anchor.getAttribute('href'));
+
     });
+});
+
+async function fetchHtml(href) {
+    fetch(href)
+        .then(response => response.text())
+        .then(html => {
+            console.log(html)
+            mainLandingPage.innerHTML = ''
+            mainLandingPage.innerHTML = html
+            letterFocus()
+        })
+    
 }
+letterFocus()

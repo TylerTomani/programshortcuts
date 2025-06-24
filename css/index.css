@@ -26,3 +26,8 @@ main > .main-content > header > nav {
 main > .main-content > header > nav h1{
 }
 
+input#searchQueryInput:active,
+input#searchQueryInput:focus{
+    background-color: blue;
+    border: 2px solid red;
+}
