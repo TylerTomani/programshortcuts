@@ -8,19 +8,21 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/side-bar.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
     <link rel="stylesheet" href="playlists-page/css/playlists-pages.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script type="module" src="js/toggle-sidebar.js" defer></script>
+    <script type="module" src="js/dark-mode.js" defer></script>
     <script type="module" src="js/letterFocus.js" defer></script>
     <script type="module" src="js/injectPage.js" defer></script>
+    <script type="module" src="js/toggle-sidebar.js" defer></script>
 </head>
-<body>
+<body class="">
     <main class="page-wrapper">
         <aside class="side-bar">
-            <div class="top">
+            <header class="top-side-bar">
                 <i id="sideBarBtn" tabindex="0" class="bx bx-menu"></i>
-                <img src="https://yt3.googleusercontent.com/YL48Vi5XV9CemI90baOOlWR0-tsxqK1H3JvfbY4svZNSthIr_YsxKykZdyNFWBFp0I-55OdPUbQ=s160-c-k-c0x00ffffff-no-rj" alt="">
-            </div>
+                <!-- <img src="https://yt3.googleusercontent.com/YL48Vi5XV9CemI90baOOlWR0-tsxqK1H3JvfbY4svZNSthIr_YsxKykZdyNFWBFp0I-55OdPUbQ=s160-c-k-c0x00ffffff-no-rj" alt=""> -->
+            </header>
             <ul>
                 <li>
                     <!-- <a id="homeAside" href="home.html"> -->
@@ -28,30 +30,34 @@
                         <i class="bx bx-home"></i>
                         <span class="nav-item">Home</span>
                     </a>
-                    <span class="tooltip">Home</span>
                 </li>
                 <li>
-                    <a id="videosAside" href="videos-page/videos-page.html">
+                    <a autofocus id="videosAside" href="videos-page/videos-page.html">
                         <i class="bx bx-video"></i>
                         <span class="nav-item">Videos</span>
                     </a>
-                    <span class="tooltip">Videos</span>
                 </li>
                 <li>
-                    <a autofocus  id="playlistsAside" href="playlists-page/playlists-page.html">
+                    <a   id="playlistsAside" href="playlists-page/playlists-page.html">
                         <i class="bx bx-video"></i>
                         <span class="nav-item">Playlist</span>
                     </a>
-                    <span class="tooltip">Playlists</span>   
                 </li>
                 <li>
 
                     <a id="codeCmdShrtCuts" href="https://tylertomani.github.io/myWebSite/webPages/codeComShortcuts/codeComShortcuts.html">
                         <img src="img/shorcut-icon.png" alt="">
                         
-                        <span class="nav-item">code Command 
+                        <span class="nav-item">
                             <br>Shortcuts</span>
                     </a>
+                    <ul>
+                        <li>
+                            Put Sub Cats here
+                            <br>(hide these when side bar min
+                            <br>size )
+                        </li>
+                    </ul>
                 
                 </li>
             </ul>

@@ -1,41 +1,28 @@
 :root{
     --width-side-active: 150px;
-    --width-side-bar: 50px;
+    --width-side-bar: 90px;
 }
 .side-bar {
     position: relative;
     width: var(--width-side-bar);
     border-right: 1px solid black;
     background-color: rgb(52, 68, 114);
-    height: 100vh
+    height: 100vh;
+
 }
-.side-bar.active {
-    width: var(--width-side-active);
-}
-.side-bar ~ .main-content{
-    width: calc(100vw - var(--width-side-bar));
-    /* border: 2px solid blue; */
-}
-.side-bar.active ~ .main-content{
-    width: calc(100vw - var(--width-side-active));
-    /* border: 2px solid blue; */
-}
-.side-bar .top {
+.side-bar.active {width: var(--width-side-active);}
+.side-bar ~ .main-content{width: calc(100vw - var(--width-side-bar));}
+.side-bar.active ~ .main-content{width: calc(100vw - var(--width-side-active));}
+.side-bar .top-side-bar {
     display: flex;
-    flex-direction: column-reverse;
     align-items: center;
 }
-.side-bar.active .top {
-    flex-direction: row;   
-}
-.side-bar .top img {
-    display: none;
-}
+
 #sideBarBtn{
     position: relative;
     z-index: 10
 }
-.side-bar.active .top img {
+.side-bar.active .top-side-bar img {
     position: absolute;
     display: inline-flex;
     height: 50px;
@@ -46,29 +33,22 @@
     width: 50px;
     border-radius: 100%;
 }
-.top i {
+.top-side-bar i {
     height: 50px;
-    margin-left: 5%;
-    margin-top: 5%;
     transform: translateY(10%);
     font-size: 2rem;
     color: #eee;
 }
-
 .side-bar ul {
-    /* margin-top: 20%; */
     padding-top: 5%;
     margin-left: 15%;
-}
-.side-bar.active ul {
-    /* padding-top: 20%; */
-}
-.side-bar ul {
-    margin-top: 50%;
+    /* margin-top: 100%; */
+    align-self: flex-end;
+    border: 2px solid orange;
 }
 .side-bar ul > li{
     list-style: none;
-    line-height: 3;
+    line-height: 2;
 }
 .side-bar ul >li a{
     text-decoration: none;
@@ -108,7 +88,9 @@ color: black;
     color: #eee;
 }
 .side-bar .nav-item {
-    display: none;
+    /* display: none; */
+    font-size: 90%;
+    margin: 0;
 }
 
 .side-bar.active .nav-item {
@@ -117,9 +99,7 @@ color: black;
     color: white;
     margin-left: 5%;
 }
-.side-bar .tooltip {
-    display: none;
-}
+.side-bar .tooltip {display: none;}
 .side-bar.active .tooltip {
     display: none;
 }

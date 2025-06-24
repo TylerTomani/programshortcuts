@@ -1,7 +1,21 @@
+:root{
+    --bg-color-prime: linear-gradient(to bottom, #0e162b, #192752, #26376c, #34478a);
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+body{
+    
+    height: 100vh;
+}
+h1 {
+    color: black;
+    text-align: end;
+    font-size: 150%;
+    margin:1% 0;
+    margin-right: 5%;
 }
 main {  
     display: flex;
@@ -10,13 +24,5 @@ main > .main-content > header > nav {
     border-bottom: 2px solid white;
 }
 main > .main-content > header > nav h1{
-    color: white;
-    text-align: end;
-    font-size: 150%;
-    margin:1% 0;
-    margin-right: 5%;
 }
-body{
-    background: linear-gradient(to bottom, #0e162b, #192752, #26376c, #34478a);
-    height: 100vh;
-}
+
