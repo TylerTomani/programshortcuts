@@ -23,9 +23,9 @@ if(sideBarBtn && sideBar){
     addEventListener('keydown', e => {
         let letter = e.key.toLowerCase()
         if(letter == 's'){
-            // if(!sideBar.classList.contains('active')){
-            //     sideBar.classList.add('active')
-            // }
+            if(!sideBar.classList.contains('active')){
+                sideBar.classList.add('active')
+            }
         }
         if(letter == 'a'){
             // if(!sideBar.classList.contains('active')){
