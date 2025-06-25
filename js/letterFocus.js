@@ -1,15 +1,41 @@
 let letterFocusInitialized = false;
 
+
 export function letterFocus() {
     if (letterFocusInitialized) return; // ✅ prevent double-binding
     letterFocusInitialized = true;
 
     let newIndex = 0;
+    let keys = {
+        shift:{
+            pressed: false
+        },
+        meta: {
+            pressed:false,
+        },
+        s:{
+            pressed: false
+        }
+    }
 
     document.addEventListener('keydown', function (e) {
         if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
         const key = e.key.toLowerCase();
 
+        if(key ===  'shift'){keys.shift.pressed = true} 
+        if(key == 'meta'){keys.meta.pressed = true} 
+        if (key == 's'){keys.s.pressed = true}
+        if(keys.shift.pressed && keys.meta.pressed && keys.s.pressed){
+            const searchQueryInput = document.querySelector('.search-query > input')
+            searchQueryInput.focus()
+            keys.shift.pressed = false
+            keys.meta.pressed = false
+            keys.s.pressed = false
+            
+            return 
+        } else {
+        }        
+        
         const allAs = [...document.querySelectorAll('a, [id]')].filter(el => {
             const rect = el.getBoundingClientRect();
             return el.offsetParent !== null && rect.width > 0 && rect.height >= 0;
@@ -37,5 +63,13 @@ export function letterFocus() {
             nextEl.focus();
         }
         window.lastLetterPressed = key;
+        if(keys.shift.pressed && keys.meta.pressed && keys.s.pressed){
+            const searchQueryInput = document.querySelector('.search-query > input')
+            searchQueryInput.focus()
+        } else {
+            keys.shift.pressed = false
+            keys.meta.pressed = false
+            keys.s.pressed = false
+        }        
     });
 }

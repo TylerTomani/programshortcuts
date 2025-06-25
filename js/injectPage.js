@@ -4,7 +4,12 @@ const links = document.querySelectorAll('.side-bar > ul > li > a');
 const mainLandingPage = document.querySelector('.main-landing-page');
 let lastPageClicked = 
 links.forEach(link => {
-    if(link.hasAttribute('autofocus')){fetchHtml(link.href)}
+    if(link.hasAttribute('autofocus')){
+        console.log(link)
+        
+        fetchHtml(link.href)
+    
+    }
     link.addEventListener('click',   (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -27,6 +32,7 @@ async function fetchHtml(href) {
     fetch(href)
         .then(response => response.text())
         .then(html => {
+            mainLandingPage.innerHTML = ``
             mainLandingPage.innerHTML = html
         })
 }
