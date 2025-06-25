@@ -6,7 +6,8 @@
 .side-bar ~ .main-content{width: calc(100vw - var(--width-side-bar));}
 .side-bar.active ~ .main-content{width: calc(100vw - var(--width-side-active));}
 #sideBarBtn{
-    position: relative;
+    position: absolute;
+    bottom: 0;
     z-index: 10
 }
 .side-bar.active .top-side-bar img {
@@ -35,10 +36,10 @@
     border: 1px solid red;
 }
 .side-bar .side-bar-ul-container {
-    margin-bottom: 59%;
+    margin-bottom: 100%;
 }
 .side-bar.active .side-bar-ul-container {
-    margin-bottom: 100%;
+    /* margin-bottom: 100%; */
 }
 .side-bar-ul-container ul {
   display: flex;
