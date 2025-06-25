@@ -1,5 +1,6 @@
 const sideBarBtn = document.querySelector('#sideBarBtn')
 const sideBar = document.querySelector('.side-bar')
+const sideBarUlContainer = document.querySelector('.side-bar-ul-container')
 const listItemsSideBar = document.querySelectorAll('.side-bar-content > .side-bar > ul > li a')
 let iItemIndex = 0
 function toggleSideBar(){
@@ -7,7 +8,7 @@ function toggleSideBar(){
 }
 toggleSideBar()
 if(sideBarBtn && sideBar){
-    [sideBarBtn,sideBar].forEach(el => {
+    [sideBarBtn,sideBar,sideBarUlContainer].forEach(el => {
         el.addEventListener('click', e => {
             if(e.target == sideBar){
                 toggleSideBar()
@@ -19,6 +20,10 @@ if(sideBarBtn && sideBar){
         if(letter == 'enter' ){   
             toggleSideBar()
         }
+    })
+    sideBarBtn.addEventListener('click', e => {
+        toggleSideBar()
+        
     })
     addEventListener('keydown', e => {
         let letter = e.key.toLowerCase()
