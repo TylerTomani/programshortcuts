@@ -1,6 +1,6 @@
 import { letterFocus } from "./letterFocus.js";
 
-const links = document.querySelectorAll('.side-bar > ul > li > a');
+    const links = document.querySelectorAll(' .side-bar > .side-bar-ul-container > ul > li > a');
 const mainLandingPage = document.querySelector('.main-landing-page');
 let lastPageClicked = 
 links.forEach(link => {
