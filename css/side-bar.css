@@ -1,6 +1,6 @@
 :root{
     --width-side-active: 100px;
-    --width-side-bar: 60px;
+    --width-side-bar: 70px;
 }
 .side-bar.active {width: var(--width-side-active);}
 .side-bar ~ .main-content{width: calc(100vw - var(--width-side-bar));}
@@ -10,7 +10,7 @@
     bottom: 0;
     z-index: 10
 }
-.side-bar.active  img {
+.side-bar.active img {
     position: absolute;
     display: inline-flex;
     height: 50px;
@@ -27,6 +27,7 @@
     color: #eee;
 }
 .side-bar {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: var(--width-side-bar);
@@ -38,16 +39,22 @@
 .side-bar .side-bar-ul-container {
     /* margin-top: 350%; */
     border: 1px solid black;
+    /* margin-top: 400%; */
+    position: absolute;
+    top: 50%;
+    /* margin-bottom: auto; */
 }
 .side-bar.active .side-bar-ul-container {
+    /* margin-top: 400%; */
     /* margin-top: 350%; */
 }
-.side-bar-ul-container ul {
+.side-bar-ul-container > ul {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* better spacing than margin or line-height */
-  padding: 0;
-  list-style: none;
+  /* gap: 1rem; better spacing than margin or line-height */
+  /* padding: 0; */
+  /* list-style: none; */
+    gap: 2rem;
 }
 
 .side-bar > .side-bar-ul-container ul >li > ul {
@@ -115,14 +122,12 @@ ul span{
 .side-bar ul li a:hover .nav-item,
 .side-bar ul li a:hover i,
 .side-bar ul li i.nav-item,.side-bar ul li a:focus i{
-    background-color: white;
-    font-weight: 999;
-    font-size: bold;
-    color: black;
+    /* background-color: white; */
+    /* font-weight: 999; */
+    /* font-size: bold; */
+    /* color: black; */
 }
-.side-bar ul li a:active .nav-item,.side-bar ul li a:focus .nav-item{
-    color: orange;
-}
+
 
 
 @media screen and (max-width:700px) {
