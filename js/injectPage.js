@@ -6,7 +6,6 @@ let lastPageClicked =
 links.forEach(link => {
     if(link.hasAttribute('autofocus')){
         console.log(link)
-        
         fetchHtml(link.href)
     
     }
@@ -34,6 +33,20 @@ async function fetchHtml(href) {
         .then(html => {
             mainLandingPage.innerHTML = ``
             mainLandingPage.innerHTML = html
+            const aLinks = mainLandingPage.querySelectorAll('.page-container a')
+            openPageLinks(aLinks)
         })
+}
+function openPageLinks(aLinks){
+    aLinks.forEach(el => {
+        el.addEventListener('click', e => {
+            e.stopPropagation()
+            e.preventDefault()
+            console.log(('yes'))
+            console.log(e.target)
+            fetch(e.target.href)
+            // window(e.target.href,'_blank')
+        })
+    })
 }
 letterFocus()
