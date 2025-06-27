@@ -10,38 +10,77 @@
     bottom: 4%;
     z-index: 10
 }
-.side-bar.active img {
-    position: absolute;
-    display: inline-flex;
-    height: 50px;
-    width: 50px;
-    border-radius: 100%;
-    right: 0;
-    height: 50px;
-    width: 50px;
-    border-radius: 100%;
-}
-.side-bar-btn-container i {
-    height: 50px;
-    font-size: 2rem;
-    color: #eee;
-}
 .side-bar {
     position: relative;
     display: flex;
     flex-direction: column;
     width: var(--width-side-bar);
-    /* border-right: 1px solid black; */
     background-color: rgb(52, 68, 114);
     height: 100vh;
-    border: 1px solid red;
+    border: 1px solid  rgb(69, 146, 99);;
 }
+.side-bar header {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 25vh;
+    max-height: 25vh;
+    /* max-width: 5%; */
+    /* border: 2px solid orange; */
+}
+.side-bar header  span{
+    position: absolute;
+    /* display: inline-block; */
+}
+.side-bar header  span > span.lgTxt{
+    font-size: 3rem;
+}
+.side-bar header  .lgTxt{
+    font-size: 2rem;
+
+}
+.side-bar header > #programTxt,
+.side-bar header > #shortcutTxt{
+
+}
+.side-bar header > #shortcutTxt{
+    top: 25%;
+}
+.side-bar header > img {
+    height: 70%;
+    width: 100%;
+    /* border-radius: 90%; */
+    /* position: absolute; */
+    top: 0%;
+    /* display: none; */
+    /* left: 5%; */
+    /* max-width: 100px; */
+    /* width:  100%; */
+    /* display: inline-flex; */
+    /* left: ; */
+    /* border: 20px solid blue; */
+}
+.side-bar.active header img {
+    /* height: 50px; */
+    /* width: 50px; */
+}
+.side-bar-btn-container {
+    /* border: 2px solid orange; */
+}
+
+
+.side-bar-btn-container i {
+    height: 50px;
+    font-size: 2rem;
+    color: #eee;
+}
+
 .side-bar .side-bar-ul-container {
     /* margin-top: 350%; */
     /* border: 1px solid black; */
     /* margin-top: 400%; */
     position: absolute;
-    top: 40%;
+    top: 35%;
     /* margin-bottom: auto; */
 }
 .side-bar.active .side-bar-ul-container {
@@ -107,11 +146,11 @@ ul span{
     /* color: white; */
 }
 
-.side-bar ul >li img{
-    align-self: center;
-    justify-self: center;
-    max-height: 30px;
-    /* color: white; */
+.side-bar .side-bar-ul-container>ul >li img{
+    /* align-self: center; */
+    /* justify-self: center; */
+    /* max-height: 30px; */
+    color: white;
     max-width:  30px;
 }
 
