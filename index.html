@@ -69,15 +69,24 @@
                 </ul>
             </div>
         </aside>
-        <div tabindex="0"  id="mainContent" class="main-content">
+        <div tabindex="0"   class="main-content">
             <header>
                 <nav>
+                    <a onclick="newWindow(e)" target="_blank" id="chatGpt" href="https://tylertomani.github.io/myWebSite/webPages/chatGpt-questions/index.html">chatgpt</a>
+                    <script>
+                         function newWindow(e){
+                            e.preventDefault()
+                            const url = event.target.href;
+                            window.open(url,'_blank')
+                         }
+                    </script>
                     <h1>program shorcuts </h1>
                 </nav>
             </header>
             <nav class="main-search-nav">
                 <!-- <form  class="search-query" action="/submit-form" method="post"> -->
-                <form  class="search-query" method="post">
+                <!-- <form  class="search-query" method="post"> -->
+                <form  class="search-query" method="index.html">
                     <input tabindex="0"  type="text"  placeholder="Search">
                 </form>
                 <!-- <div id="searchBtnContainer">
