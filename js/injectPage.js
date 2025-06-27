@@ -1,6 +1,7 @@
 import { letterFocus } from "./letterFocus.js";
 export const links = document.querySelectorAll(' .side-bar > .side-bar-ul-container > ul > li > a');
 export const mainLandingPage = document.querySelector('.main-landing-page');
+import { stepFocus } from "./step-focus.js";
 let lastPageClicked
 let clickedLink = false
 links.forEach(link => {
@@ -44,6 +45,7 @@ async function fetchHtml(href) {
             mainLandingPage.innerHTML = html
             const aLinks = mainLandingPage.querySelectorAll('.page-container a')
             openPageLinks(aLinks)
+            stepFocus()
             letterFocus()
         })
 }

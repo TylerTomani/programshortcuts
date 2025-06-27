@@ -5,18 +5,23 @@
     display: flex;
 }
 .step {
-    border: 2px solid salmon;
+    /* border: 2px solid salmon; */
     display: flex;
 }
 .step > * {flex-basis: 45%;}
 .step > .step-txt{
-    border: 2px solid green;
     display: flex;
     flex-direction: column;
     padding-bottom: 5%;
+    border: 1px solid black;
+}
+.step > .step-txt:active,.step > .step-txt:focus{
+    box-shadow: 0 2px 3px 3px grey;
+    
 }
 .step > .step-vid{
-    border: 2px solid blue;
+    border: 1px solid black;
+    /* border: 2px solid blue; */
 }
 
 .step > .step-txt header{
