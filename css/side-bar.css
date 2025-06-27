@@ -3,7 +3,11 @@
     --width-side-bar: 70px;
 }
 .side-bar.active {width: var(--width-side-active);}
-.side-bar ~ .main-content{width: calc(100vw - var(--width-side-bar));}
+.side-bar ~ .main-content{
+    position: fixed;
+    right: 0;
+    width: calc(100vw - var(--width-side-bar));
+}
 .side-bar.active ~ .main-content{width: calc(100vw - var(--width-side-active));}
 #sideBarBtn{
     position: absolute;
@@ -11,7 +15,7 @@
     z-index: 10
 }
 .side-bar {
-    position: relative;
+    position: fixed;
     display: flex;
     flex-direction: column;
     width: var(--width-side-bar);
