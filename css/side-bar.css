@@ -7,7 +7,7 @@
 .side-bar.active ~ .main-content{width: calc(100vw - var(--width-side-active));}
 #sideBarBtn{
     position: absolute;
-    bottom: 0;
+    bottom: 4%;
     z-index: 10
 }
 .side-bar.active img {
@@ -31,14 +31,14 @@
     display: flex;
     flex-direction: column;
     width: var(--width-side-bar);
-    border-right: 1px solid black;
+    /* border-right: 1px solid black; */
     background-color: rgb(52, 68, 114);
     height: 100vh;
     border: 1px solid red;
 }
 .side-bar .side-bar-ul-container {
     /* margin-top: 350%; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     /* margin-top: 400%; */
     position: absolute;
     top: 40%;
@@ -60,7 +60,14 @@
 .side-bar > .side-bar-ul-container ul >li > ul {
     display: none;
 }
+.side-bar.active .side-bar-ul-container >  ul >li > ul a{
+    text-decoration: none;
+}
+.side-bar.active .side-bar-ul-container >  ul >li > ul a,
 .side-bar.active .side-bar-ul-container >  ul >li > ul {
+    color: rgb(69, 146, 99);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.5;
     /* list-style: square ; */
     display: inline-block;
     /* line-height: 1; */
@@ -132,7 +139,7 @@ ul span{
 
 @media screen and (max-width:700px) {
     .side-bar.active a:active ~ .tooltip,.side-bar.active a:focus ~ .tooltip {
-        display: none
+        /* display: none */
     }
     /* *{background-color: blue;} */
     .side-bar a:hover ~ .tooltip,
