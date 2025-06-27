@@ -1,4 +1,5 @@
 let letterFocusInitialized = false;
+// import { links } from "./injectPage.js";
 export function letterFocus() {
     if (letterFocusInitialized) return; // ✅ prevent double-binding
     letterFocusInitialized = true;
@@ -14,6 +15,15 @@ export function letterFocus() {
             pressed: false
         }
     }
+    // links.forEach(el => {
+    //         const aLinks = mainLandingPage.querySelectorAll('.page-container a')
+    //         aLinks.forEach(el => {
+    //         console.log('yes')
+    //         if(el.hasAttribute('autofocus')){
+    //             el.removeAttribute('autofocus')
+    //         }
+    //     })
+    // })
     document.addEventListener('keydown', function (e) {
         if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
         const key = e.key.toLowerCase();

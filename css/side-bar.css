@@ -41,7 +41,7 @@
     border: 1px solid black;
     /* margin-top: 400%; */
     position: absolute;
-    top: 50%;
+    top: 40%;
     /* margin-bottom: auto; */
 }
 .side-bar.active .side-bar-ul-container {
