@@ -7,32 +7,34 @@
     box-sizing: border-box;
 }
 body{
-    overflow: hidden;    
-    overflow-y: scroll;
-    height: 100vh;
+    /* overflow-x: hidden;     */
+    /* overflow: scroll; */
+    /* height: 100vh; */
 }
 h1 {
-    color: black;
+    color: lawngreen;
+    color: lavender;
     text-align: end;
     font-size: 150%;
     margin:1% 0;
     margin-right: 5%;
 }
-main {  
+.page-wrapper{  
     display: flex;
+    border: 3px solid red;
 }
 
 main > .main-content > header {
     /* position: relative; */
-    background-image: url('../img//pbeach3.jpg');
     background: linear-gradient(#344472,#26376c,#26376c,#344472);
+    background-image: url('../img//pbeach3.jpg');
     width: 100%;
     height: 10vh;
     left: 0;
     top: 0;
     /* position: static; */
     /* background-position-x: 50%; */
-    background-position-y: 0%;
+    background-position-y:20%;
     background-size: 100%;
     background-repeat: no-repeat;
     /* background-color: blue; */
