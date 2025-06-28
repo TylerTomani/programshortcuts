@@ -2,6 +2,10 @@ let letterFocusInitialized = false;
 import { links } from "./injectPage.js";
 import { mainLandingPage } from "./injectPage.js";
 export function letterFocus() {
+    let homeAside = document.getElementById('homeAside')
+    homeAside.addEventListener('focus',()=>{
+        
+    })
     if (letterFocusInitialized) return; // ✅ prevent double-binding
     letterFocusInitialized = true;
     let newIndex = 0;
@@ -17,6 +21,9 @@ export function letterFocus() {
         }
     }
     links.forEach(el => {
+        el.addEventListener('focus', e => {
+            scrollTo(0,0)
+        })
         el.addEventListener('click', e => {
 
             const aLinks = mainLandingPage.querySelectorAll('.page-container a')

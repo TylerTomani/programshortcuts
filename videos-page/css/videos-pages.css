@@ -8,9 +8,22 @@
 .content-header img {
     max-height: 150px;
 }
-#content > main.main-content {
+.videos-collections-container{
     display: flex;
-    flex-direction: column;
-    /* border: 2px solid blue; */
+    flex-wrap: wrap;
+    border: 2px solid blue;
+}
+.videos-collection {
+    /* display: flex; */
+}
+.videos-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video-container {
+    flex-basis: 24%;
+    display: inline-block;
+    
 }
 
