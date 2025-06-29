@@ -4,98 +4,57 @@
 }
 
 .side-bar.active {
-    /* width: var(--width-side-active); */
-    flex-basis: 7%;
+    width: var(--width-side-active);
+    /* flex-basis: 7%; */
 }
 .side-bar {
     position: fixed;
     display: flex;
     flex-direction: column;
     width: var(--width-side-bar);
-    /* flex-basis: 10%; */
-    /* width: 10%; */
-    /* padding-top: 10%; */
+    
     background-color: rgb(52, 68, 114);
     height: 100vh;
     border: 1px solid  rgb(69, 146, 99);;
 }
 
-.side-bar.active ~ .main-content{width: calc(100vw - var(--width-side-active));}
+.side-bar.active ~ .main-content{
+    width: calc(100vw - var(--width-side-active));
+}
 #sideBarBtn{
     position: absolute;
     bottom: 1%;
     left: 0;
     z-index: 10
 }
-
 .side-bar header {
-    /* margin-top: 50%; */
-    /* border: 2px solid red; */
     position: relative;
     top: 0;
     left: 0;
-    /* height: 25vh; */
-    /* max-height: 25vh; */
-    /* max-width: 5%; */
-    /* border: 2px solid orange; */
 }
-.side-bar header  span{
-    /* position: absolute; */
-    /* display: inline-block; */
-}
-.side-bar header  span > span.lgTxt{
-    font-size: 3rem;
-}
-.side-bar header  .lgTxt{
-    font-size: 2rem;
 
-}
-.side-bar header > #programTxt,
-.side-bar header > #shortcutTxt{
-
-}
-.side-bar header > #shortcutTxt{
-    top: 25%;
-}
 .side-bar header > img {
     height: 70%;
     width: 100%;
-    /* border-radius: 90%; */
-    /* position: absolute; */
-    top: 0%;
-    /* display: none; */
-    /* left: 5%; */
-    /* max-width: 100px; */
-    /* width:  100%; */
-    /* display: inline-flex; */
-    /* left: ; */
-    /* border: 20px solid blue; */
-}
-.side-bar.active header img {
-    /* height: 50px; */
-    /* width: 50px; */
-}
-.side-bar-btn-container {
-    /* border: 2px solid orange; */
 }
 
-
-.side-bar-btn-container i {
-    height: 50px;
-    font-size: 2rem;
-    color: #eee;
-}
 
 .side-bar .side-bar-ul-container {
     /* margin-top: 350%; */
     /* border: 1px solid black; */
     /* margin-top: 400%; */
     /* position: absolute; */
-    margin-top: 45%;
+    margin-top: 250%
     /* margin-bottom: auto; */
 }
+.side-bar-btn-container i {
+    height: 50px;
+    font-size: 2rem;
+    color: #eee;
+}
+
 .side-bar.active .side-bar-ul-container {
-    /* margin-top: 400%; */
+    margin-top: 150%
     /* margin-top: 350%; */
 }
 .side-bar-ul-container > ul {

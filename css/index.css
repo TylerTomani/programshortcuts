@@ -20,7 +20,7 @@ body{
     /* flex-basis: 90%; */
     /* width: 80%; */
     right: 0;
-    --width-side-bar in side-bar.css
+    /* --width-side-bar in side-bar.css */
     width: calc(100vw - var(--width-side-bar));
 }
 h1 {
