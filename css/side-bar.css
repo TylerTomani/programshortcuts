@@ -162,4 +162,7 @@ ul span{
         /* background-color: white; */
         transform: translate(102%,-100%);
     }   
+    #sideBarBtn{
+        bottom: 3%; 
+    }
 }
