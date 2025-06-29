@@ -2,50 +2,45 @@
     --width-side-active: 100px;
     --width-side-bar: 70px;
 }
+
 .side-bar.active {
     /* width: var(--width-side-active); */
     flex-basis: 7%;
 }
 .side-bar {
-    /* position: fixed; */
+    position: fixed;
     display: flex;
     flex-direction: column;
-    /* width: var(--width-side-bar); */
-    flex-basis: 10%;
+    width: var(--width-side-bar);
+    /* flex-basis: 10%; */
     /* width: 10%; */
+    /* padding-top: 10%; */
     background-color: rgb(52, 68, 114);
     height: 100vh;
     border: 1px solid  rgb(69, 146, 99);;
 }
-.side-bar ~ .main-content{
-    /* position: sticky; */
-    /* top: 0; */
-    /* overflow-y: sc; */
-    /* right: 0; */
-    flex-grow: 1;
-    flex-basis: 90%;
-    /* width: 80%; */
-    right: 0;
-    /* width: calc(100vw - var(--width-side-bar)); */
-}
+
 .side-bar.active ~ .main-content{width: calc(100vw - var(--width-side-active));}
 #sideBarBtn{
     position: absolute;
     bottom: 1%;
+    left: 0;
     z-index: 10
 }
 
 .side-bar header {
+    /* margin-top: 50%; */
+    /* border: 2px solid red; */
     position: relative;
     top: 0;
     left: 0;
-    height: 25vh;
-    max-height: 25vh;
+    /* height: 25vh; */
+    /* max-height: 25vh; */
     /* max-width: 5%; */
     /* border: 2px solid orange; */
 }
 .side-bar header  span{
-    position: absolute;
+    /* position: absolute; */
     /* display: inline-block; */
 }
 .side-bar header  span > span.lgTxt{
