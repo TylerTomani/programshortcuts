@@ -13,9 +13,11 @@
     flex-direction: column;
     width: var(--width-side-bar);
     
-    background-color: rgb(52, 68, 114);
+    /* background-color: rgb(52, 68, 114); */
+    /* background-color: rgb(33, 37, 25); */
+    background-color: rgb(33, 35, 28);
     height: 100vh;
-    border: 1px solid  rgb(69, 146, 99);;
+    /* border-right: 1px solid  rgb(69, 146, 99);; */
 }
 
 .side-bar.active ~ .main-content{
@@ -44,7 +46,7 @@
     /* border: 1px solid black; */
     /* margin-top: 400%; */
     /* position: absolute; */
-    margin-top: 250%
+    margin-top: 350%
     /* margin-bottom: auto; */
 }
 .side-bar-btn-container i {
