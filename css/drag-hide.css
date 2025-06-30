@@ -1,15 +1,10 @@
-/* Start off-screen when hidden */
-.side-bar.hidden {
-  transform: translateX(-100%);
+.side-bar {
   transition: transform 0.3s ease;
-  display: none;
+  transform: translateX(0);
 }
 
-/* Default sidebar position */
-.side-bar {
-    
-    transform: translateX(0);
-    transition: transform 0.3s ease;
+.side-bar.hidden {
+  transform: translateX(-100%);
 }
 
 .side-bar.hidden ~ .main-content{
