@@ -32,6 +32,9 @@ if(sideBarBtn && sideBar){
             if(!sideBar.classList.contains('active')){
                 sideBar.classList.add('active')
             }
+            if(sideBar.classList.contains('hidden')){
+                sideBar.classList.remove('hidden')
+            }
         }
         if(letter == 'a'){
             // if(!sideBar.classList.contains('active')){

@@ -7,7 +7,7 @@
 .side-bar.hidden {
   transform: translateX(-100%) !important;
   opacity: 0;
-  transition:  ease-out opacity 2000ms;
+  /* transition:  ease-out opacity 2000ms; */
 }
 
 .side-bar.hidden ~ .main-content{
