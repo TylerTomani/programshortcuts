@@ -1,6 +1,6 @@
 :root{
-    --width-side-active: 15vw;
-    --width-side-bar: 10vw;
+    --width-side-active: 10vw;
+    --width-side-bar: 5vw;
 }
 
 .side-bar.active {
@@ -26,15 +26,13 @@
 .side-bar ~ .main-content{
     /* width: calc(100vw  - var(--width-side-active)); */
     width: 100%;
+    flex-grow: 1;
 }
 .side-bar ~ .main-content header{
     /* width: 150%; */
 }
 #sideBarBtn{
-    position: absolute;
-    bottom: 1%;
-    left: 0;
-    z-index: 10
+    
 }
 .side-bar header {
     /* position: relative; */
@@ -49,6 +47,7 @@
 
 
 .side-bar .side-bar-ul-container {
+    /* position: relative; */
     /* margin-top: 350%; */
     /* border: 1px solid black; */
     /* margin-top: 400%; */
@@ -62,6 +61,12 @@
     display: flex;
     flex-direction: column;
     /* margin-top: 350%; */
+}
+.side-bar-btn-container{
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    z-index: 10
 }
 .side-bar-btn-container i {
     height: 50px;
