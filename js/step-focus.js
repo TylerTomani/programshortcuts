@@ -13,13 +13,8 @@ export function stepFocus(){
         }
         if(key.toLocaleLowerCase() === 'm' && e.target.id != 'mainShorcutPageContainer'){
             console.log(mainShorcutPageContainer)
-           body.scrollTo({
-            top: 0,        // Specifies the vertical scroll position (0 for the very top)
-            left: 0,       // Specifies the horizontal scroll position (0 for the very left)
-            behavior: 'smooth' // Optional: Provides a smooth scrolling animation
-            });
-        // what the fuck !!!!???? why won't it scroll to top of page ???????!!!!!!!!!!!!
-        // Find error
+            body.scrollTo(0, 0)
+    
 
              
         }
