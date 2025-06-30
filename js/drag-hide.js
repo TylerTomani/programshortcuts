@@ -19,12 +19,12 @@ document.addEventListener('touchend', (e) => {
 
   // Swipe left to hide sidebar
   if (swipeDistance < -50) {
-    sidebar.classList.add('hidden');
+    sidebar.classList.toggle('hidden');
   }
 
   // Swipe from edge (x < 20) right at least 50% of screen width to show sidebar
   if (
-    startX < 20 &&
+    startX < 100px &&
     swipeDistance > window.innerWidth * 0.5 &&
     sidebar.classList.contains('hidden')
   ) {

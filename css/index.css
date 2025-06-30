@@ -30,7 +30,7 @@ body{
     bottom: 0;
     overflow-y: auto;
     height: 100vh;
-        width: calc(100vw - var(--width-side-active));
+    width: calc(100vw - var(--width-side-active));
 }
 
 h1 {
@@ -48,9 +48,9 @@ h1 {
 
 main > .main-content > header {
     /* position: relative; */
-    background: linear-gradient(#344472,#26376c,#26376c,#344472);
+    /* background: linear-gradient(#344472,#26376c,#26376c,#344472); */
     background-image: url('../img//pbeach3.jpg');
-    width: 100%;
+    width: 100% ;
     height: 10vh;
     left: 0;
     top: 0;

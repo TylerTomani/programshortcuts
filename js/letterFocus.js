@@ -3,6 +3,7 @@ import { links } from "./injectPage.js";
 import { mainLandingPage } from "./injectPage.js";
 export function letterFocus() {
     let homeAside = document.getElementById('homeAside')
+        
     homeAside.addEventListener('focus',()=>{
         
     })
@@ -82,5 +83,7 @@ export function letterFocus() {
                 keys.s.pressed = false
             }        
         }
+        
     });
+    
 }
