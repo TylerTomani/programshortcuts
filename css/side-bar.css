@@ -65,6 +65,9 @@
   left: 0;
   z-index: 10;
 }
+.dark-mode .side-bar.hidden + .side-bar-btn-container #sideBarBtn {
+  color: white;
+}
 .side-bar.hidden + .side-bar-btn-container #sideBarBtn {
   /* display: inline-block !important; */
   /* float: right; */
