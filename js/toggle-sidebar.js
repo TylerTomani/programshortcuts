@@ -20,11 +20,12 @@ if(sideBarBtn && sideBar){
         if(letter == 'enter' ){   
             console.log(sideBar)
             toggleSideBar()
+            // sideBar.classList.toggle('hidden')
         }
     })
     sideBarBtn.addEventListener('click', e => {
+        sideBar.classList.toggle('hidden')
         if(sideBar.classList.contains('hidden')){
-            sideBar.classList.remove('hidden')
         }
         toggleSideBar()
         

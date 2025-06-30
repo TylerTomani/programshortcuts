@@ -46,14 +46,14 @@
 .side-bar .side-bar-ul-container {
   /* align-items: flex-end; */
   /* justify-content: flex-end; */
-    margin-top:40%;
+    margin-top:50%;
     display: flex;
     flex-direction: column;
     gap: 4rem;
 }
 
 
-.side-bar + i#sideBarBtn {
+.side-bar + #sideBarBtn {
   position: absolute;
   display: block;
   max-width: 20px;
@@ -98,7 +98,8 @@
   gap: 1rem;
   display: flex;
   flex-direction: column;
-  margin-top: 10%;
+  /* margin-top: 10%; */
+  margin-top: 30%;
   
 }
 .side-bar.active .side-bar-ul-container > ul {
@@ -176,8 +177,5 @@
     display: inline-flex;
     color: lightslategray;
     transform: translate(102%, -100%);
-  }
-  .side-bar-btn-container {
-    bottom: 4%;
   }
 }

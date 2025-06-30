@@ -12,29 +12,29 @@ document.addEventListener('touchend', (e) => {
   const swipeDistance = endX - startX;
 
    if (swipeDistance < -50 && !sidebar.classList.contains('hidden')) {
-    sidebar.classList.add('hidden');
-    if(sideBar.classList.contains('active')){
-      sidebar.classList.toggle('active')
-    }
+    //  if(sideBar.classList.contains('active')){
+    //    sidebar.classList.toggle('active')
+    //   }
+      sidebar.classList.toggle('hidden');
   }
 
   // Swipe right from left edge: show sidebar if hidden
-  if (swipeDistance > 150 && startX < 50 && sidebar.classList.contains('hidden')) {
-    if(sideBar.classList.contains('active')){
-      sidebar.classList.remove('active')
-    }
-    sidebar.classList.remove('hidden');
-  }
+  // if (swipeDistance > 150 && startX < 50 && sidebar.classList.contains('hidden')) {
+  //   if(sideBar.classList.contains('active')){
+  //     sidebar.classList.remove('active')
+  //   }
+  //   sidebar.classList.remove('hidden');
+  // }
 });
 
-sidebar.addEventListener('click', e => {
-  const sidebar = getSideBar(e.target)
-  console.log(sidebar)
-  if(sidebar.classList.contains('active')){
-    sidebar.classList.remove('active')
-  }
-  sidebar.classList.add('hidden')
-})
+// sidebar.addEventListener('click', e => {
+//   const sidebar = getSideBar(e.target)
+//   console.log(sidebar)
+//   if(sidebar.classList.contains('active')){
+//     sidebar.classList.remove('active')
+//   }
+//   sidebar.classList.add('hidden')
+// })
 function getSideBar(parent){
   if(parent.classList.contains('side-bar')){
     return parent
