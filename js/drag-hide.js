@@ -27,14 +27,14 @@ document.addEventListener('touchend', (e) => {
   }
 });
 
-// sidebar.addEventListener('click', e => {
-//   const sidebar = getSideBar(e.target)
-//   console.log(sidebar)
-//   if(sidebar.classList.contains('active')){
-//     sidebar.classList.remove('active')
-//   }
-//   sidebar.classList.add('hidden')
-// })
+sidebar.addEventListener('click', e => {
+  const sidebar = getSideBar(e.target)
+  console.log(sidebar)
+  if(sidebar.classList.contains('active')){
+    sidebar.classList.remove('active')
+  }
+  sidebar.classList.add('hidden')
+})
 function getSideBar(parent){
   if(parent.classList.contains('side-bar')){
     return parent
