@@ -16,3 +16,14 @@ document.addEventListener('touchend', (e) => {
     sidebar.classList.toggle('hidden');
   }
 });
+
+
+function getSideBar(parent){
+  if(parent.classList.contains('side-bar')){
+    return parent
+  } else if (parent.parentElement){
+    return getSideBar(parent.parentElement)
+  } else {
+    return null
+  }
+}

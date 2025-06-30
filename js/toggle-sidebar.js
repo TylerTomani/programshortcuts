@@ -18,6 +18,7 @@ if(sideBarBtn && sideBar){
     sideBarBtn.addEventListener('keydown', e => {
         let letter = e.key.toLowerCase() 
         if(letter == 'enter' ){   
+            console.log(sideBar)
             toggleSideBar()
         }
     })
