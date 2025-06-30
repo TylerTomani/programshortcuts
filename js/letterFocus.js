@@ -1,6 +1,6 @@
-let letterFocusInitialized = false;
 import { links } from "./injectPage.js";
 import { mainLandingPage } from "./injectPage.js";
+let letterFocusInitialized = false;
 export function letterFocus() {
     let homeAside = document.getElementById('homeAside')
         
@@ -87,3 +87,4 @@ export function letterFocus() {
     });
     
 }
+// letterFocus()
