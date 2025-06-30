@@ -1,7 +1,7 @@
 
 .side-bar {
-  /* transition: transform 0.3s ease; */
-  /* transform: translateX(0); */
+  transition: transform 0.3s ease;
+  transform: translateX(0);
 }
 
 .side-bar.hidden {
