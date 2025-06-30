@@ -56,30 +56,27 @@
     gap: 4rem;
 }
 
-
-.side-bar-btn-container {
+#sideBarBtn {
   position: fixed;
-  max-height: 20px;
+  display: block;
   max-width: 20px;
+  height: 50px;
+  max-height: 50px;
+  font-size: 2rem;
+  color: #eee;
   bottom: 5%;
   left: 0;
   z-index: 10;
 }
-.dark-mode .side-bar.hidden + .side-bar-btn-container #sideBarBtn {
+.dark-mode  #sideBarBtn {
   color: white;
 }
-.side-bar.hidden + .side-bar-btn-container #sideBarBtn {
+.side-bar.hidden + #sideBarBtn {
   /* display: inline-block !important; */
   /* float: right; */
   color: black !important;
-  
+ 
 }
-.side-bar-btn-container i {
-  height: 50px;
-  font-size: 2rem;
-  color: #eee;
-}
-
 .side-bar-ul-container > ul {
   margin-left: 10%;
   gap: 1rem;
