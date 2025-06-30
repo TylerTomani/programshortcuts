@@ -14,8 +14,9 @@
     flex-direction: column;
     padding-bottom: 5%;
     border: 1px solid black;
-    color: white;
+    color: black;
 }
+
 .step-txt {
     font-size: 70%;
 }
