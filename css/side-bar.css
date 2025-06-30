@@ -24,8 +24,8 @@
     width: calc(100vw - var(--width-side-active));
 }
 .side-bar ~ .main-content{
-    width: calc(100vw + 8px - var(--width-side-active));
-    width: 85%;
+    width: calc(100vw  - var(--width-side-active));
+    width: 88%;
 }
 .side-bar ~ .main-content header{
     /* width: 150%; */
