@@ -6,6 +6,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+body,
+.page-container {
+    /* background: linear-gradient(#344472,#26376c,#26376c,#344472); */
+}
 body{
     /* overflow: hidden;     */
     /* overflow-y: scroll; */
@@ -25,14 +29,14 @@ body{
     /* --width-side-bar in side-bar.css */
 /* } */
 .page-wrapper > .main-content {
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     right: 0;
     bottom: 0;
     overflow-y: auto;
     height: 100vh;
-    width: calc(100vw - var(--width-side-active));
-    background: linear-gradient(#344472,#26376c,#26376c,#344472);
+    width: calc(70vw - var(--width-side-bar));
+    
 }
 
 h1 {
