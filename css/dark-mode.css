@@ -5,6 +5,10 @@ body.dark-mode {
 .dark-mode h1 {
     color: white;
 }
+.dark-mode #sideBarBtn{
+    color: white !important;
+
+}
 .dark-mode .step-txt{
     color: white ;
 }
