@@ -7,10 +7,10 @@
 .side-bar {
   flex-basis: var(--width-side-bar);
   width: var(--width-side-bar);
+  position: sticky;
   display: flex;
   flex-direction: column;
   background-color: rgb(33, 35, 28);
-  position: sticky;
   top: 0;
   height: 100vh;
   z-index: 1;
@@ -54,33 +54,23 @@
 
 
 .side-bar + #sideBarBtn {
-  position: absolute;
-  display: block;
-  max-width: 20px;
-  height: 50px;
-  max-height: 50px;
-  color: #eee;
+   position: fixed;
   bottom: 2%;
-  left: 0;
-  z-index: 10;
-  font-size: 1.85rem;
-  min-width: 40px;
+  left: 1%;
+  z-index: 999;
+  font-size: 2rem;
+  color: #eee;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;  
+  
 }
-.side-bar.active + #sideBarBtn.bx-menu {
+.side-bar.active + #sideBarBtn{
   /* margin-right: 5%%; */
   /* border: 2px solid green; */
   min-width: 48px;
   font-size: 2rem;
-}
-#sideBarBtn.bx-menu {
-  /* border: 2px solid red; */
-  padding-top: 2%s;
-  font-style: 2rem;
-  width: 100%;
-  max-width: 5px;
-  padding-left: .75%;
-  padding-top: .5%;
-  display: inline-block;
 }
 .dark-mode  #sideBarBtn {
   color: white;
