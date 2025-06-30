@@ -1,5 +1,5 @@
-body.dark-mode{
-    background: var(--bg-color-prime);
+body.dark-mode {
+    background: var(--bg-color-prime) !important;
 }
 .dark-mode h1 {
     color: white;
