@@ -1,6 +1,9 @@
 body.dark-mode {
-    /* background: var(--bg-color-prime) !important; */
+    background: var(--bg-color-prime) !important;
 }
 .dark-mode h1 {
     color: white;
+}
+.dark-mode .step-txt{
+    color: white ;
 }
