@@ -150,10 +150,7 @@ ul span{
 
 
 @media screen and (max-width:700px) {
-    .side-bar.active a:active ~ .tooltip,.side-bar.active a:focus ~ .tooltip {
-        /* display: none */
-    }
-    /* *{background-color: blue;} */
+    .side-bar.actb
     .side-bar a:hover ~ .tooltip,
     .side-bar a:active ~ .tooltip,
     .side-bar a:focus ~ .tooltip {
