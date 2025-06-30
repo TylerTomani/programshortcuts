@@ -13,10 +13,16 @@ document.addEventListener('touchend', (e) => {
 
    if (swipeDistance < -50 && !sidebar.classList.contains('hidden')) {
     sidebar.classList.add('hidden');
+    if(sideBar.classList.contains('active')){
+      sidebar.classList.remove('active')
+    }
   }
 
   // Swipe right from left edge: show sidebar if hidden
   if (swipeDistance > 50 && startX < 40 && sidebar.classList.contains('hidden')) {
+    if(sideBar.classList.contains('active')){
+      sidebar.classList.remove('active')
+    }
     sidebar.classList.remove('hidden');
   }
 });
