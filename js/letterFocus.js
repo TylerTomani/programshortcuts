@@ -51,23 +51,34 @@ export function letterFocus() {
             console.log('yes')
             return 
         } 
-        const allAs = [...document.querySelectorAll('a, [id]')].filter(el => {
+        const allEls = [...document.querySelectorAll('a, [id]')].filter(el => {
             const rect = el.getBoundingClientRect();
             return el.offsetParent !== null && rect.width > 0 && rect.height >= 0;
         });
-        const letteredAs = allAs.filter(a => a.id[0]?.toLowerCase() === key);
-        if (letteredAs.length === 0) return;
+
+        // const letteredEls = allEls.filter(a => a.id[0]?.toLowerCase() === key);
+        const letteredEls = [...document.querySelectorAll('a, [id]')].filter(el => {
+          const rect = el.getBoundingClientRect();
+            return (
+            getComputedStyle(el).visibility !== 'hidden' &&
+            getComputedStyle(el).display !== 'none' &&
+            rect.width > 0 &&
+            rect.height > 0 &&
+             el.id[0]?.toLowerCase() === key
+        );
+    });
+        if (letteredEls.length === 0) return;
         const active = document.activeElement;
-        const currentIndexInFiltered = letteredAs.indexOf(active);
+        const currentIndexInFiltered = letteredEls.indexOf(active);
         if(!e.meta){
             if (key !== window.lastLetterPressed) {
-                newIndex = e.shiftKey ? letteredAs.length - 1 : 0;
+                newIndex = e.shiftKey ? letteredEls.length - 1 : 0;
             } else {
                 newIndex = e.shiftKey
-                    ? (currentIndexInFiltered - 1 + letteredAs.length) % letteredAs.length
-                    : (currentIndexInFiltered + 1) % letteredAs.length;
+                    ? (currentIndexInFiltered - 1 + letteredEls.length) % letteredEls.length
+                    : (currentIndexInFiltered + 1) % letteredEls.length;
             }
-            const nextEl = letteredAs[newIndex];
+            const nextEl = letteredEls[newIndex];
             if (nextEl) {
                 if (!nextEl.hasAttribute('tabindex')) {
                     nextEl.setAttribute('tabindex', '0');
