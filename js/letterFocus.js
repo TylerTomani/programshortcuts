@@ -48,6 +48,7 @@ export function letterFocus() {
             keys.shift.pressed = false
             keys.meta.pressed = false
             keys.s.pressed = false
+            console.log('yes')
             return 
         } 
         const allAs = [...document.querySelectorAll('a, [id]')].filter(el => {
