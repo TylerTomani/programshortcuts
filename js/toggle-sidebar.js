@@ -23,6 +23,9 @@ if(sideBarBtn && sideBar){
         }
     })
     sideBarBtn.addEventListener('click', e => {
+        if(sideBar.classList.contains('hidden')){
+            sideBar.classList.remove('hidden')
+        }
         toggleSideBar()
         
     })
