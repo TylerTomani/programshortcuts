@@ -21,9 +21,11 @@
   width: var(--width-side-active);
 }
 
+
 .side-bar.hidden {
-  /* display: none; */
+  display: none;
 }
+
 /* ========== MAIN-CONTENT WHEN SIDEBAR IS HIDDEN ========== */
 .side-bar.hidden + .main-content {
   flex-grow: 1;
@@ -42,23 +44,33 @@
 }
 
 .side-bar.active .side-bar-ul-container {
-    /* margin-top: 10%; */
+  /* margin-top: 150% */
 }
 .side-bar .side-bar-ul-container {
-    /* align-items: flex-end; */
-    justify-content: flex-end;
+  /* align-items: flex-end; */
+  /* justify-content: flex-end; */
+    margin-top: 20%;
     display: flex;
     flex-direction: column;
+    justify-self: flex-end;
     gap: 4rem;
 }
 
+
 .side-bar-btn-container {
-  position: absolute;
+  position: fixed;
+  max-height: 20px;
+  max-width: 20px;
   bottom: 5%;
   left: 0;
   z-index: 10;
 }
-
+.side-bar.hidden + .side-bar-btn-container #sideBarBtn {
+  /* display: inline-block !important; */
+  /* float: right; */
+  color: black !important;
+  
+}
 .side-bar-btn-container i {
   height: 50px;
   font-size: 2rem;
@@ -66,8 +78,14 @@
 }
 
 .side-bar-ul-container > ul {
-    margin-left: 10%;
-    
+  margin-left: 10%;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  
+}
+.side-bar.active .side-bar-ul-container > ul {
+  margin-top: 10%;
 }
 .side-bar-ul-container > ul li{
     list-style-type: none;
@@ -115,6 +133,13 @@
     width: 15vh;
   }
 
+  .side-bar .side-bar-ul-container > ul {
+    margin-top: 200%;
+    gap: 2rem;
+  }
+  .side-bar.active .side-bar-ul-container > ul {
+    margin-top: 100%;
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -125,9 +150,11 @@
     color: lightslategray;
     transform: translate(102%, -100%);
   }
-
+  .side-bar-btn-container {
+    bottom: 4%;
+  }
   :root {
-  --width-side-bar: 10vw;
+  --width-side-bar: 14vw;
   --width-side-active: 15vw;
 }
 }
