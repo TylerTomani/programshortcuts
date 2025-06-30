@@ -23,6 +23,13 @@
 .side-bar.active ~ .main-content{
     width: calc(100vw - var(--width-side-active));
 }
+.side-bar ~ .main-content{
+    width: calc(100vw + 8px - var(--width-side-active));
+    width: 85%;
+}
+.side-bar ~ .main-content header{
+    /* width: 150%; */
+}
 #sideBarBtn{
     position: absolute;
     bottom: 1%;
@@ -30,7 +37,7 @@
     z-index: 10
 }
 .side-bar header {
-    position: relative;
+    /* position: relative; */
     top: 0;
     left: 0;
 }

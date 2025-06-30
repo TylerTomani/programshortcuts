@@ -1,7 +1,7 @@
 import { letterFocus } from "./letterFocus.js";
+import { stepFocus } from "./step-focus.js";
 export const links = document.querySelectorAll(' .side-bar > .side-bar-ul-container > ul > li > a');
 export const mainLandingPage = document.querySelector('.main-landing-page');
-import { stepFocus } from "./step-focus.js";
 let lastPageClicked
 let clickedLink = false
 links.forEach(link => {
@@ -57,7 +57,6 @@ function openPageLinks(aLinks){
         //     e.preventDefault()
         //     let key = e.key
         //     if(key === 13){
-                 
         //         console.log(('yes'))
         //         console.log(e.target)
         //         fetch(e.target.href)
@@ -91,4 +90,4 @@ function openPageLinks(aLinks){
     })
     
 }
-letterFocus()
+// letterFocus()
