@@ -1,0 +1,24 @@
+.step{
+    /* position: block; */
+}
+.step.relative {
+position: relative;    
+}
+.enlarge-vid {
+    position: absolute;
+    transform: scale(3);
+    right: 0;
+    /* transition: all 400ms; */
+    z-index: 1;
+
+}
+@media screen and (max-width:800px){
+.enlarge-vid {
+    position: absolute;
+    transform: scale(3);
+    right: 5%;
+    transition: all 400ms;
+    z-index: 1;
+
+}
+}

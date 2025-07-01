@@ -1,5 +1,8 @@
 import { letterFocus } from "./letterFocus.js";
-import { stepFocus } from "./step-focus.js";
+import { stepFocus } from "../videos-page/js/step-focus.js";
+import { playVids } from "../videos-page/js/play-vid.js";
+
+    
 export const links = document.querySelectorAll(' .side-bar > .side-bar-ul-container > ul > li > a');
 export const mainLandingPage = document.querySelector('.main-landing-page');
 let lastPageClicked
@@ -46,6 +49,7 @@ async function fetchHtml(href) {
             const aLinks = mainLandingPage.querySelectorAll('.page-container a')
             openPageLinks(aLinks)
             stepFocus()
+            playVids()
             letterFocus()
         })
 }
