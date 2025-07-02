@@ -4,6 +4,8 @@ export function playVids(){
     const stepTxts = document.querySelectorAll('.step-txt')
     const allVideos = document.querySelectorAll('video')
     allVideos.forEach(vid => {
+          vid.loop = true;
+
         vid.addEventListener('click', e => {
             const step = getStep(e.target)
             playing = !playing

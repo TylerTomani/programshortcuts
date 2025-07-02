@@ -4,6 +4,10 @@ export function stepFocus(){
         
     addEventListener('keydown', e => {
         let key = e.key
+        let keyCode = e.keyCode
+        if(key === '32'){
+             e.preventDefault()
+        }
         if(!isNaN(key)){
             const intlet = parseInt(key)
             // console.log(intlet)
@@ -23,5 +27,3 @@ export function stepFocus(){
         // console.log(el)
     })
 }
-
-// stepFocus()

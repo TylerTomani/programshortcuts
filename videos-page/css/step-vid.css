@@ -8,7 +8,8 @@ position: relative;
     position: absolute;
     transform: scale(3);
     right: 0;
-    /* transition: all 400ms; */
+    top: 25%;
+    transition: all 400ms;
     z-index: 1;
 
 }
