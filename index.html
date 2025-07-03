@@ -19,10 +19,9 @@
     <script type="module" src="js/letterFocus.js" defer></script>
     <script type="module" src="js/toggle-sidebar.js" defer></script>
     <script type="module" src="js/dark-mode.js" defer></script>
-
     
 </head>
-    <body class="dark-mode">
+<body class="dark-mode">
     <!-- <body class=""> -->
     <main class="page-wrapper">
         <!-- <aside class="side-bar hidden"> -->
@@ -30,7 +29,7 @@
             <header>
                 <!-- <span id="programTxt"><span class="lgtxt">P</span>rogram</span> -->
                 <!-- <span id="shortcutTxt"><span class="lgtxt">S</span>hortcuts</span> -->
-                 <img src="img/ps-beach2.png" alt="">
+                 <img src="img/program-shorcut-logo.png" alt="">
             </header>
             <div class="side-bar-ul-container">
                 <ul>
@@ -45,6 +44,10 @@
                             <li><a href="#">Mac</a></li>
                             <li><a href="#">Windows</a></li>
                             <li>Vs Code</li>
+                            <li><a id="codeCmdShortcutPage">Code 
+                                <br>&emsp;Command
+                                <br>&emsp;&emsp;Shortcuts
+                            </a></li>
                         </ul>
                     </li>
                     <li>
@@ -84,14 +87,8 @@
         <div tabindex="0"   class="main-content">
             <header>
                 <nav>
-                    <a onclick="newWindow(e)" target="_blank" id="chatGpt" href="https://tylertomani.github.io/myWebSite/webPages/chatGpt-questions/index.html">chatgpt</a>
-                    <script>
-                         function newWindow(e){
-                            e.preventDefault()
-                            const url = event.target.href;
-                            window.open(url,'_blank')
-                         }
-                    </script>
+                    <a target="_blank" id="chatGpt" href="https://tylertomani.github.io/myWebSite/webPages/chatGpt-questions/index.html">chatgpt</a>
+                    
                     <h1>program shorcuts </h1>
                 </nav>
             </header>
@@ -108,8 +105,9 @@
                 </div> -->
             </nav>
             <!-- Put the below code in home.html -->
-            <div tabindex="0" class="main-landing-page">
+            <div tabindex="0"  class="main-landing-page">
                  
              </div>
         </div>
     </main>
+</body>

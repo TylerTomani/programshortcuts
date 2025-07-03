@@ -27,6 +27,7 @@
 }
 
 /* ========== MAIN-CONTENT WHEN SIDEBAR IS HIDDEN ========== */
+
 .side-bar.hidden + .main-content {
   flex-grow: 1;
   width: 100%;

@@ -38,32 +38,31 @@ export function playVids(){
         playPauseVideo(e,vid)
     }
 
-    function playPauseVideo(e,vid){
-        const keyCode = e.keyCode
-        if(keyCode === 13){
-            topggleVideoSize(vid)
-            playing = true
+    function playPauseVideo(e, vid) {
+        const keyCode = e.keyCode;
+
+        switch (keyCode) {
+            case 13: // Enter
+                toggleVideoSize(vid);
+                playing = true;
+                break;
+            case 32: // Space
+                e.preventDefault();
+                playing = !playing;
+                break;
+            case 37: // Left Arrow
+                e.preventDefault();
+                vid.currentTime -= 1;
+                break;
+            case 39: // Right Arrow
+                e.preventDefault();
+                vid.currentTime += 1;
+                break;
         }
-        if(keyCode === 32){
-            e.preventDefault()
-            e.stopPropagation()
-            playing = !playing
-        }
-        if(keyCode === 37){
-            e.preventDefault()
-            vid.currentTime -= 1
-        }
-        if(keyCode === 39){
-            e.preventDefault()
-            vid.currentTime += 1
-        }
-        if(playing){
-            vid.play()
-        } else {
-            vid.pause()
-        }
+
+        playing ? vid.play() : vid.pause();
     }
-    function topggleVideoSize(vid){
+    function toggleVideoSize(vid){
         denlargeAllVideos()
         const step = getStep(vid.parentElement)
         step.classList.toggle('relative')

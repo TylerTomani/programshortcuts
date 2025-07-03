@@ -9,11 +9,14 @@ export function stepFocus(){
              e.preventDefault()
         }
         if(!isNaN(key)){
-            const intlet = parseInt(key)
+            
             // console.log(intlet)
-            // stepTxts[intlet - 1].scrollIntoView({behavior: 'smooth', block: 'center'})
+            let intlet = parseInt(key)
+            intlet -= 1
+            console.log(intlet)
             if(stepTxts.length == 0) return
-            stepTxts[intlet - 1]?.focus()
+            stepTxts[intlet]?.focus()
+            // stepTxts[intlet].scrollIntoView({behavior: 'smooth', block: 'center'})
         }
         if(key.toLocaleLowerCase() === 'm' && e.target.id != 'mainShorcutPageContainer'){
             // console.log(mainShorcutPageContainer)
