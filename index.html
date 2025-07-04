@@ -21,6 +21,7 @@
     <script type="module" src="js/letterFocus.js" defer></script>
     <script type="module" src="js/toggle-sidebar.js" defer></script>
     <script type="module" src="js/dark-mode.js" defer></script>
+    <script type="module" src="js/side-bar-drop-topics.js" defer></script>
     
 </head>
 <!-- <body class="dark-mode"> -->
@@ -34,7 +35,7 @@
                  <img src="img/program-shorcut-logo.png" alt="">
             </header>
             <div class="side-bar-ul-container">
-                <ul>
+                <ul class="topics">
                     <!-- Shorcuts - tbd -->
                     <li>
                         <a id="shortcutsAside" href="shortcutsCom-tbd-tem.html">
@@ -42,10 +43,10 @@
                             <span class="nav-item">
                                 Shortcuts</span>
                         </a>
-                        <ul>
-                            <li><a href="#">Mac</a></li>
-                            <li><a href="#">Windows</a></li>
-                            <li>Vs Code</li>
+                        <ul class="hide">
+                            <!-- <li><a id="macShortcutsAside" href="place-hold.html">Mac</a></li>
+                            <li><a id="windowsShortcutsAside" href="place-hold.html">Windows</a></li> -->
+                            <li><a  id="vsCodeShortcuts" href="place-hold.html">Vs Code</a></li>
                             <li><a target="_blank" id="codeCmdShortcutPage" href="https://tylertomani.github.io/myWebSite/webPages/codeComShortcuts/codeComShortcuts.html">Code 
                                 <br>&emsp;Command
                                 <br>&emsp;&emsp;Shortcuts
@@ -68,9 +69,9 @@
                             <span class="nav-item">Videos</span>
                         </a>
                         <ul>
-                            <li><a href="#">Youtube</a></li>
-                            <li><a href="#">Mac</a></li>
-                            <li><a href="#">Windows</a></li>
+                            <li><a id="youtubeVideoAside">Youtube</a></li>
+                            <li><a id="macVideosAside" href="place-hold.html">Mac</a></li>
+                            <li><a id="windowsVideosAside" href="place-hold.html">Windows</a></li>
                         </ul>
                     </li>
                     <li>

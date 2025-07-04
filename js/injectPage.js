@@ -3,18 +3,32 @@ import { stepFocus } from "../videos-page/js/step-focus.js";
 import { playVids } from "../videos-page/js/play-vid.js";
 
     
-export const sideBarLinks = document.querySelectorAll(' .side-bar > .side-bar-ul-container > ul > li > a');
+export const sideBarLinks = document.querySelectorAll(' .side-bar > .side-bar-ul-container li a');
 export const mainLandingPage = document.querySelector('.main-landing-page');
+
 let lastPageClicked
 let clickedLink = false
+const allAs = document.querySelectorAll('a')
+allAs.forEach(a => {
+    if(a.hasAttribute('target')){
+        a.addEventListener('click', e => {
+            window.open(e.target.href,'_blank')
+        })
+    }
+        
+})
 sideBarLinks.forEach(link => {
+    
     if(link.hasAttribute('autofocus')){
         // console.log(link)
         fetchHtml(link.href)    
     }
-    link.addEventListener('click',   (e) => {
+    link.addEventListener('click',(e) => {
         e.preventDefault();
         e.stopPropagation();
+        if(e.target.hasAttribute('target')){
+            return
+        }
         clickedLink = true
         const anchor = e.target.closest('a');
         if (!anchor) return;
@@ -28,9 +42,12 @@ sideBarLinks.forEach(link => {
     });
     link.addEventListener('keydown', e => {
         let key = e.key.toLowerCase()
+        if(e.target.hasAttribute('target')){
+            return
+        }
         if(key === 'enter' && e.target == lastPageClicked && clickedLink){
             fetchHtml(e.target.href)
-            mainLandingPage.focus()
+            // mainLandingPage.focus()
         } else if(key == 'enter'){
             clickedLink = true
             letterFocus()
@@ -40,7 +57,7 @@ sideBarLinks.forEach(link => {
         lastPageClicked = e.target
     });
 });
-async function fetchHtml(href) {
+export async function fetchHtml(href) {
     fetch(href)
         .then(response => response.text())
         .then(html => {

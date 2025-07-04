@@ -40,25 +40,25 @@ if(sideBarBtn && sideBar){
                 sideBar.classList.remove('hidden')
             }
         }
-        if(letter == 'a'){
-            // if(!sideBar.classList.contains('active')){
-            //     sideBar.classList.add('active')
-            // }
-            // if(!e.shiftKey){
-            //     iItemIndex = (iItemIndex + 1 ) % listItemsSideBar.length
-            // } else {
-            //     iItemIndex = (iItemIndex - 1 + listItemsSideBar.length) % listItemsSideBar.length
-            // }
-            // listItemsSideBar[iItemIndex].focus()
+        // if(letter == 'a'){
+        //     // if(!sideBar.classList.contains('active')){
+        //     //     sideBar.classList.add('active')
+        //     // }
+        //     // if(!e.shiftKey){
+        //     //     iItemIndex = (iItemIndex + 1 ) % listItemsSideBar.length
+        //     // } else {
+        //     //     iItemIndex = (iItemIndex - 1 + listItemsSideBar.length) % listItemsSideBar.length
+        //     // }
+        //     // listItemsSideBar[iItemIndex].focus()
 
 
-        }
+        // }
     })
-    listItemsSideBar.forEach((el,i,arr) => {
-        el.addEventListener('focus', e => {
-            iItemIndex = [...arr].indexOf(e.target)
+    // listItemsSideBar.forEach((el,i,arr) => {
+    //     el.addEventListener('focus', e => {
+    //         iItemIndex = [...arr].indexOf(e.target)
 
-        });
-    })   
+    //     });
+    // })   
     
 }

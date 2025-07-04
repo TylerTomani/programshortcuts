@@ -26,7 +26,6 @@ export function letterFocus() {
             scrollTo(0,0)
         })
         el.addEventListener('click', e => {
-
             const aLinks = mainLandingPage.querySelectorAll('.page-container a')
             aLinks.forEach(el => {
                 
@@ -51,7 +50,7 @@ export function letterFocus() {
             console.log('yes')
             return 
         } 
-        const allEls = [...document.querySelectorAll('a, [id]')].filter(el => {
+        const allEls = [...document.querySelectorAll('.side-bar li a, a[id]')].filter(el => {
             const rect = el.getBoundingClientRect();
             return el.offsetParent !== null && rect.width > 0 && rect.height >= 0;
         });

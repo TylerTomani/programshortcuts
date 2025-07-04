@@ -212,3 +212,7 @@
 
   }
 }
+
+.hide {
+  display: none !important;
+}
