@@ -64,7 +64,6 @@ export function playVids(){
                 
                 playing = true;
                 if(playing && vid.classList.contains('enlarge-vid')){
-                    console.log('yes')
                     playing = !playing
                 }
                 toggleVideoSize(vid);
@@ -112,5 +111,18 @@ export function playVids(){
             return null
         }
     }
+    addEventListener('keydown', e => {
+        if(e.target.classList.contains('step-txt')) return
+        if(e.keyCode === 32){
+            if(playing ){
+                console.log('yes')
+                // e.preventDefault()
+                stopAllVideos()
+            } 
+            
+        }
+        
+    })
 }
+
 
