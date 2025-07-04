@@ -29,8 +29,8 @@
 /* ========== MAIN-CONTENT WHEN SIDEBAR IS HIDDEN ========== */
 
 .side-bar.hidden + .main-content {
-  flex-grow: 1;
-  width: 100%;
+  /* flex-grow: 1;
+  width: 100%; */
 }
 
 /* ========== CHILD ELEMENTS ========== */

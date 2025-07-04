@@ -77,7 +77,6 @@ export function playVids(){
     addEventListener('click', e => {
         e.preventDefault()
         if(!e.target.parentElement.classList.contains('step-vid')){
-            console.log(e.target)
             denlargeAllVideos()
         }
     })
