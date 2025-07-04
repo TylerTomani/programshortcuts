@@ -71,3 +71,17 @@ iframe {
   /* border-radius: 8px; */
   /* text-shadow: 0 0 10px #9a1a73; */
 }
+@media screen and (max-width: 420px) {
+    .step-txt {
+        font-size: 80%;
+    }
+
+    .cmd{
+        color: #ffaa00;
+        font-size: 90%;
+        font-family: 'Poppins', sans-serif;
+        padding: 8px 12px;
+        /* border-radius: 8px; */
+        /* text-shadow: 0 0 10px #9a1a73; */
+    }
+}
