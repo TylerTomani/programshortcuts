@@ -4,7 +4,7 @@ export function playVids(){
     const stepTxts = document.querySelectorAll('.step-txt')
     const allVideos = document.querySelectorAll('video')
     allVideos.forEach(vid => {
-        vid.volume = 0;
+        // vid.volume = 0;
         vid.loop = true;
         vid.controls = true;  // IMPORTANT
         vid.style.width = '100%'; // Optional for responsiveness
@@ -14,9 +14,25 @@ export function playVids(){
             handleVideo(e,step)
         })
     })
+    /**
+ When step-txt has focus OR video is clicked
+    vid z-index should be higher so 2, and any other one lower
+
+    */
     stepTxts.forEach(el => {
-        el.addEventListener('click', e => {
-            
+        el.addEventListener('focus', e => {
+            const step = getStep(e.target.parentElement)
+            const vid = step.querySelector('video')
+            if(vid.classList.contains('enlarge-vid')){
+                vid.style.zIndex = 2
+            }
+        })
+        el.addEventListener('focusout', e => {
+            const step = getStep(e.target.parentElement)
+            const vid = step.querySelector('video')
+            if(vid.classList.contains('enlarge-vid')){
+                vid.style.zIndex = 1
+            }
         })
         el.addEventListener('keydown', e => {            
             let step = getStep(e.target.parentElement)
@@ -33,10 +49,11 @@ export function playVids(){
         })
     }
     function handleVideo(e,step){
-             let stepVid = step.querySelector('.step-vid')     
-        const vid = stepVid.querySelector('video')
-
-        playPauseVideo(e,vid)
+        let stepVid = step.querySelector('.step-vid')     
+        const vid = stepVid.querySelector('video')      
+        if(vid){
+            playPauseVideo(e,vid)
+        }
     }
 
     function playPauseVideo(e, vid) {
@@ -44,12 +61,13 @@ export function playVids(){
 
         switch (keyCode) {
             case 13: // Enter
-                toggleVideoSize(vid);
+                
+                playing = true;
                 if(playing && vid.classList.contains('enlarge-vid')){
                     console.log('yes')
                     playing = !playing
-                } 
-                playing = true;
+                }
+                toggleVideoSize(vid);
                 break;
             case 32: // Space
                 e.preventDefault();
@@ -85,14 +103,14 @@ export function playVids(){
             denlargeAllVideos()
         }
     })
-}
-function getStep(parent){
-    if(parent.classList.contains('step') || parent.classList.contains('step-float')){
-        return parent
-    } else if (parent.parentElement){
-        return getStep(parent.parentElement)
-    } else {
-        return null
+    function getStep(parent){
+        if(parent.classList.contains('step') || parent.classList.contains('step-float')){
+            return parent
+        } else if (parent.parentElement){
+            return getStep(parent.parentElement)
+        } else {
+            return null
+        }
     }
 }
 

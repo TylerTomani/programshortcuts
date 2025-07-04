@@ -13,7 +13,6 @@ export function stepFocus(){
             // console.log(intlet)
             let intlet = parseInt(key)
             intlet -= 1
-            console.log(intlet)
             if(stepTxts.length == 0) return
             stepTxts[intlet]?.focus()
             // stepTxts[intlet].scrollIntoView({behavior: 'smooth', block: 'center'})
