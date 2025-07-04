@@ -1,13 +1,13 @@
 import { letterFocus } from "./letterFocus.js";
 import { stepFocus } from "../videos-page/js/step-focus.js";
 import { playVids } from "../videos-page/js/play-vid.js";
-import { openPageLinks } from "./openPageLinks.js";
+
     
-export const links = document.querySelectorAll(' .side-bar > .side-bar-ul-container > ul > li > a');
+export const sideBarLinks = document.querySelectorAll(' .side-bar > .side-bar-ul-container > ul > li > a');
 export const mainLandingPage = document.querySelector('.main-landing-page');
 let lastPageClicked
 let clickedLink = false
-links.forEach(link => {
+sideBarLinks.forEach(link => {
     if(link.hasAttribute('autofocus')){
         // console.log(link)
         fetchHtml(link.href)    
@@ -19,7 +19,7 @@ links.forEach(link => {
         const anchor = e.target.closest('a');
         if (!anchor) return;
         fetchHtml(anchor.getAttribute('href'));
-        const aLinks = mainLandingPage.querySelectorAll('.page-container a')
+        // const aLinks = mainLandingPage.querySelectorAll('.page-container a')
         // aLinks.forEach(el => {
         //     if(el.hasAttribute('autofocus')){
         //         el.removeAttribute('autofocus')
@@ -46,51 +46,53 @@ async function fetchHtml(href) {
         .then(html => {
             mainLandingPage.innerHTML = ``
             mainLandingPage.innerHTML = html
-            
+            const aLinks = mainLandingPage.querySelectorAll('.page-container a')
+            openPageLinks(aLinks)
             stepFocus()
             playVids()
             letterFocus()
-            openPageLinks()
         })
 }
+function openPageLinks(aLinks){
+    aLinks.forEach(link => {
+        // link.addEventListener('keydown', e => {
+        //     e.stopPropagation()
+        //     console.log(e.target)      
+        //     e.preventDefault()
+        //     let key = e.key
+        //     if(key === 13){
+        //         console.log(('yes'))
+        //         console.log(e.target)
+        //         fetch(e.target.href)
+        //     }
+        //     // window(e.target.href,'_blank')
+        // })
+        if(link.hasAttribute('autofocus') && !clickedLink){
+            // const anchor = link.target.closest('a');
+            // if (!anchor) return;
+            // console.log(link.href)
+            const href = link.getAttribute('href');
+            // Optional: check that it's a local/internal link
+            if (!href.startsWith('http')) {
+                fetchHtml(href);
+            }
+        }
+        link.addEventListener('focus', (e) => {
+        })
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const anchor = e.target.closest('a');
+            if (!anchor) return;
+            const href = anchor.getAttribute('href');
+            if (!href) return;
 
-    // aLinks.forEach(link => {
-    //     // link.addEventListener('keydown', e => {
-    //     //     e.stopPropagation()
-    //     //     console.log(e.target)      
-    //     //     e.preventDefault()
-    //     //     let key = e.key
-    //     //     if(key === 13){
-    //     //         console.log(('yes'))
-    //     //         console.log(e.target)
-    //     //         fetch(e.target.href)
-    //     //     }
-    //     //     // window(e.target.href,'_blank')
-    //     // })
-    //     if(link.hasAttribute('autofocus') && !clickedLink){
-    //         // const anchor = link.target.closest('a');
-    //         // if (!anchor) return;
-    //         // console.log(link.href)
-    //         const href = link.getAttribute('href');
-    //         // Optional: check that it's a local/internal link
-    //         if (!href.startsWith('http')) {
-    //             fetchHtml(href);
-    //         }
-    //     }
-    //     link.addEventListener('focus', (e) => {
-    //     })
-    //     link.addEventListener('click', e => {
-    //         e.preventDefault();
-    //         const anchor = e.target.closest('a');
-    //         if (!anchor) return;
-    //         const href = anchor.getAttribute('href');
-    //         if (!href) return;
-
-    //         // Optional: check that it's a local/internal link
-    //         if (!href.startsWith('http')) {
-    //             fetchHtml(href);
-    //         }
-    //     });
-    // })
+            // Optional: check that it's a local/internal link
+            if (!href.startsWith('http')) {
+                fetchHtml(href);
+            }
+        });
+    })
+    
+}
 
 // letterFocus()

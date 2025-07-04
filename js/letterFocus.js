@@ -1,4 +1,4 @@
-import { links } from "./injectPage.js";
+import { sideBarLinks } from "./injectPage.js";
 import { mainLandingPage } from "./injectPage.js";
 let letterFocusInitialized = false;
 export function letterFocus() {
@@ -21,7 +21,7 @@ export function letterFocus() {
             pressed: false
         }
     }
-    links.forEach(el => {
+    sideBarLinks.forEach(el => {
         el.addEventListener('focus', e => {
             scrollTo(0,0)
         })

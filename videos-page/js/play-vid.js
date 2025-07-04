@@ -4,8 +4,9 @@ export function playVids(){
     const stepTxts = document.querySelectorAll('.step-txt')
     const allVideos = document.querySelectorAll('video')
     allVideos.forEach(vid => {
+        vid.volume = 0;
         vid.loop = true;
-    vid.controls = true;  // IMPORTANT
+        vid.controls = true;  // IMPORTANT
         vid.style.width = '100%'; // Optional for responsiveness
         vid.addEventListener('click', e => {
             const step = getStep(e.target)
@@ -27,7 +28,7 @@ export function playVids(){
     function denlargeAllVideos(){
         allVideos.forEach(el => {
             if(el.classList.contains('enlarge-vid')){
-                el.classList.remove('enlarge')
+                el.classList.remove('enlarge-vid')
             }
         })
     }
@@ -44,6 +45,10 @@ export function playVids(){
         switch (keyCode) {
             case 13: // Enter
                 toggleVideoSize(vid);
+                if(playing && vid.classList.contains('enlarge-vid')){
+                    console.log('yes')
+                    playing = !playing
+                } 
                 playing = true;
                 break;
             case 32: // Space
@@ -63,7 +68,7 @@ export function playVids(){
         playing ? vid.play() : vid.pause();
     }
     function toggleVideoSize(vid){
-        denlargeAllVideos()
+        // denlargeAllVideos()
         const step = getStep(vid.parentElement)
         step.classList.toggle('relative')
         vid.classList.toggle('enlarge-vid')
