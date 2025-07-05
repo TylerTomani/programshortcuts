@@ -4,7 +4,7 @@ export function playVids(){
     const stepTxts = document.querySelectorAll('.step-txt')
     const allVideos = document.querySelectorAll('video')
     allVideos.forEach(vid => {
-        // vid.volume = 0;
+        vid.volume = 0;
         vid.loop = true;
         vid.controls = true;  // IMPORTANT
         vid.style.width = '100%'; // Optional for responsiveness
@@ -23,6 +23,7 @@ export function playVids(){
         el.addEventListener('focus', e => {
             const step = getStep(e.target.parentElement)
             const vid = step.querySelector('video')
+            denlargeAllVideos()
             if(vid.classList.contains('enlarge-vid')){
                 vid.style.zIndex = 2
             }
@@ -36,15 +37,17 @@ export function playVids(){
         })
         el.addEventListener('keydown', e => {            
             let step = getStep(e.target.parentElement)
-
             stopAllVideos()
             handleVideo(e,step)
         })
     })
     function denlargeAllVideos(){
         allVideos.forEach(el => {
+            const step = getStep(el.parentElement)
             if(el.classList.contains('enlarge-vid')){
                 el.classList.remove('enlarge-vid')
+                step.classList.remove('relative')
+                // el.parentElement.classList.remove('')
             }
         })
     }
@@ -61,7 +64,8 @@ export function playVids(){
 
         switch (keyCode) {
             case 13: // Enter
-                
+                // denlargeAllVideos()
+                e.target.scrollIntoView()
                 playing = true;
                 if(playing && vid.classList.contains('enlarge-vid')){
                     playing = !playing
