@@ -18,7 +18,6 @@ export function stepFocus(){
         
         if(!isNaN(key)){
             
-            // console.log(intlet)
             let intlet = parseInt(key)
             intlet -= 1
             if(stepTxts.length == 0) return
@@ -26,7 +25,6 @@ export function stepFocus(){
             // stepTxts[intlet].scrollIntoView({behavior: 'smooth', block: 'center'})
         }
         if(key.toLocaleLowerCase() === 'm' && e.target.id != 'mainShorcutPageContainer'){
-            // console.log(mainShorcutPageContainer)
             body.scrollTo(0, 0)
     
 
@@ -50,7 +48,6 @@ function getStep(parent){
 }
 function toggleImg(e){
     let keyCode = e.keyCode
-    console.log(e.target)
     const step = getStep(e.target.parentElement) 
     const img = step.querySelector('img')
     if(img){

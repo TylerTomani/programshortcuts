@@ -4,7 +4,7 @@ export function playVids(){
     const stepTxts = document.querySelectorAll('.step-txt')
     const allVideos = document.querySelectorAll('video')
     allVideos.forEach(vid => {
-        // vid.volume = 0;
+        vid.volume = 0;
         vid.loop = true;
         vid.controls = true;  // IMPORTANT
         vid.style.width = '100%'; // Optional for responsiveness
@@ -68,7 +68,8 @@ export function playVids(){
         switch (keyCode) {
             case 13: // Enter
                 // denlargeAllVideos()
-                e.target.scrollIntoView()
+                e.target.scrollIntoView({behavior: 'smooth', inline: 'end'})
+                console.log(e.target)
                 playing = true;
                 if(playing && vid.classList.contains('enlarge-vid')){
                     playing = !playing
