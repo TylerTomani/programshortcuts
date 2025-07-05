@@ -11,8 +11,15 @@ dropTopics.forEach(el => {
 function toggleSubTopics(e){
     const parentUl = e.target.closest('li')
     const ul = parentUl.querySelector('ul')
+    if(!ul){
+        
+        if(e.target == clickedListItem){
+            mainLandingPage.focus()
+        }
+        clickedListItem = e.target
+        return
+    }
     ul.classList.toggle('hide')
-    
     if(!ul.classList.contains('hide') && e.target == clickedListItem){
         fetchHtml(e.target.href)
         mainLandingPage.focus()
@@ -23,6 +30,7 @@ function toggleSubTopics(e){
         
     } else {
         fetchHtml(e.target.href)
+        
 
     }
     

@@ -1,0 +1,25 @@
+.step{
+    /* position: block; */
+}
+.step.relative {
+position: relative;    
+}
+.enlarge-img {
+    position: relative;
+    transition: all 400ms;
+    z-index: 1;
+    transform: scale(1.5);
+    /* max-width: 50vw; */
+    right: 25%;
+    /* top: 50%; */
+}
+@media screen and (max-width:800px){
+.enlarge-img {
+    position: absolute;
+    transform: scale(3);
+    right: 5%;
+    transition: all 400ms;
+    z-index: 1;
+
+}
+}

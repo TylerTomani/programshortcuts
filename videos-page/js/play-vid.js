@@ -11,6 +11,7 @@ export function playVids(){
         vid.addEventListener('click', e => {
             const step = getStep(e.target)
             playing = !playing
+            toggleVideoSize(e.target)
             handleVideo(e,step)
         })
     })
@@ -24,14 +25,16 @@ export function playVids(){
             const step = getStep(e.target.parentElement)
             const vid = step.querySelector('video')
             denlargeAllVideos()
-            if(vid.classList.contains('enlarge-vid')){
+
+            if(vid && vid.classList.contains('enlarge-vid')){
                 vid.style.zIndex = 2
             }
         })
         el.addEventListener('focusout', e => {
             const step = getStep(e.target.parentElement)
             const vid = step.querySelector('video')
-            if(vid.classList.contains('enlarge-vid')){
+
+            if(vid && vid.classList.contains('enlarge-vid')){
                 vid.style.zIndex = 1
             }
         })
@@ -53,7 +56,7 @@ export function playVids(){
     }
     function handleVideo(e,step){
         let stepVid = step.querySelector('.step-vid')     
-        const vid = stepVid.querySelector('video')      
+        const vid = stepVid?.querySelector('video')      
         if(vid){
             playPauseVideo(e,vid)
         }
