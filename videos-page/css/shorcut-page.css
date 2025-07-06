@@ -80,7 +80,13 @@ iframe {
         font-size: 50%;
         font-family: 'Poppins', sans-serif;
         padding: 8px 12px;
-        /* border-radius: 8px; */
-        /* text-shadow: 0 0 10px #9a1a73; */
+    }
+}
+@media screen and (max-width: 450px) {
+    .step-txt {
+        font-size: 60% !important;
+    }
+    .cmd{
+        font-size: 50%;
     }
 }
