@@ -3,7 +3,7 @@ import { mainLandingPage } from "./injectPage.js"
 import { fetchHtml } from "./injectPage.js"
 let clickedListItem 
 dropTopics.forEach(el => {
-    const parentUl = e.target.closest('li')
+    const parentUl = el.closest('li')
     const ul = parentUl.querySelector('ul')
     console.log(ul)
     ul.classList.add('hide')
