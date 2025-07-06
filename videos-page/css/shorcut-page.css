@@ -73,7 +73,7 @@ iframe {
 }
 @media screen and (max-width: 800px) {
     .step-txt {
-        font-size: 90% !important;
+        font-size: 60% !important;
     }
     .cmd{
         color: #ffaa00;
