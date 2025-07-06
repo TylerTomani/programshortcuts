@@ -73,7 +73,7 @@ iframe {
 }
 @media screen and (max-width: 420px) {
     .step-txt {
-        font-size: 80%;
+        font-size: 40%;
     }
 
     .cmd{
