@@ -4,7 +4,7 @@ export function playVids(){
     const stepTxts = document.querySelectorAll('.step-txt')
     const allVideos = document.querySelectorAll('video')
     allVideos.forEach(vid => {
-        vid.volume = 0;
+        // vid.volume = 0;
         vid.loop = true;
         vid.controls = true;  // IMPORTANT
         vid.style.width = '100%'; // Optional for responsiveness
