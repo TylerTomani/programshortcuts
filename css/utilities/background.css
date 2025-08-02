@@ -1,8 +1,11 @@
 main > .main-content > header {
-
-    /* background-image: url('../../img/program-shortcut-banner.jpg'); */
+    background-image: url('../../img/program-shortcut-banner.jpg');
     background-position-y:20%;
     background-size: 100%;
     background-repeat: no-repeat;
+}
+
+input#searchQueryInput:active,
+input#searchQueryInput:focus{
     background-color: blue;
 }

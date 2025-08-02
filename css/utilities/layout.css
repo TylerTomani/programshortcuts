@@ -7,3 +7,8 @@
   flex-shrink: 1;
   flex-basis: 0;
 }
+
+.main-search-nav {
+    display: flex;
+    justify-content: flex-end;
+}

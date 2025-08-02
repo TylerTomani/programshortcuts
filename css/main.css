@@ -1,3 +1,7 @@
+/* Components */
+@import url('components/drag-hide.css');
+@import url('components/side-bar.css');
+/* Utities */
 @import url('utilities/layout.css');
 @import url('utilities/colors.css');
 @import url('utilities/sizing.css');

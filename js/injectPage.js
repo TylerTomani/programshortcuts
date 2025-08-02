@@ -3,20 +3,20 @@ import { stepFocus } from "../videos-page/js/step-focus.js";
 import { playVids } from "../videos-page/js/play-vid.js";
 
     
-export const sideBarLinks = document.querySelectorAll(' .side-bar > .side-bar-ul-container li a');
+export const sideBarLinks = document.querySelectorAll(' .side-bar-ul-container li a');
 export const mainLandingPage = document.querySelector('.main-landing-page');
 
 let lastPageClicked
 let clickedLink = false
 const allAs = document.querySelectorAll('a')
-allAs.forEach(a => {
-    if(a.hasAttribute('target')){
-        a.addEventListener('click', e => {
-            window.open(e.target.href,'_blank')
-        })
-    }
+// allAs.forEach(a => {
+//     if(a.hasAttribute('target')){
+//         a.addEventListener('click', e => {
+//             window.open(e.target.href,'_blank')
+//         })
+//     }
         
-})
+// })
 sideBarLinks.forEach(link => {
     
     if(link.hasAttribute('autofocus')){
