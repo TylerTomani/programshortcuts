@@ -1,35 +1,10 @@
 
 .page-wrapper > .main-content {
-
   width: auto;
   transition: all 0.3s ease;
 }
 
 
-h1 {
-    color: lawngreen;
-    color: lavender;
-    text-align: end;
-    font-size: 150%;
-    margin:1% 0;
-    margin-right: 5%;
-}
-
-
-main > .main-content > header {
-    /* position: sticky; */
-    background-image: url('../img/program-shortcut-banner.jpg');
-    width: 100% ;
-    height: 10vh;
-    left: 0;
-    top: 0;
-    /* position: static; */
-    /* background-position-x: 50%; */
-    background-position-y:20%;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    /* background-color: blue; */
-}
 
 input#searchQueryInput:active,
 input#searchQueryInput:focus{

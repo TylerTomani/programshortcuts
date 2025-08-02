@@ -1,4 +1,9 @@
 @import url('utilities/layout.css');
+@import url('utilities/colors.css');
+@import url('utilities/sizing.css');
+@import url('utilities/position.css');
+@import url('utilities/spacing.css');
+@import url('utilities/background.css');
 :root{
     --bg-color-prime: linear-gradient(to bottom, #0e162b, #192752, #26376c, #34478a);
 }

@@ -1,0 +1,8 @@
+h1 {
+    font-size: 150%;
+}
+
+main > .main-content > header {
+    width: 100% ;
+    height: 10vh;
+}

@@ -1,0 +1,10 @@
+h1 {
+    text-align: end;
+    margin:1% 0;
+    margin-right: 5%;
+}
+
+main > .main-content > header {
+    left: 0;
+    top: 0;
+}
