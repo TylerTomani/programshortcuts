@@ -1,13 +1,6 @@
 
-
-.page-wrapper {
-  display: flex;
-}
-
 .page-wrapper > .main-content {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0;
+
   width: auto;
   transition: all 0.3s ease;
 }
