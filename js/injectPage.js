@@ -9,14 +9,14 @@ export const mainLandingPage = document.querySelector('.main-landing-page');
 let lastPageClicked
 let clickedLink = false
 const allAs = document.querySelectorAll('a')
-// allAs.forEach(a => {
-//     if(a.hasAttribute('target')){
-//         a.addEventListener('click', e => {
-//             window.open(e.target.href,'_blank')
-//         })
-//     }
+allAs.forEach(a => {
+    if(a.hasAttribute('target')){
+        a.addEventListener('click', e => {
+            window.open(e.target.href,'_blank')
+        })
+    }
         
-// })
+})
 sideBarLinks.forEach(link => {
     
     if(link.hasAttribute('autofocus')){

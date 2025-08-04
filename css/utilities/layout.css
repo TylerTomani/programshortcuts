@@ -9,6 +9,15 @@
 }
 
 .main-search-nav {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
+}
+.items-container{
+  display: flex;
+}
+.items-container > .item {
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  height: 25vh;
 }

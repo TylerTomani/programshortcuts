@@ -1,3 +1,7 @@
 h1 {
     color: lavender;
 }
+#chatGptPageLink{
+    color: whitesmoke !important;
+    text-decoration: none;
+}
