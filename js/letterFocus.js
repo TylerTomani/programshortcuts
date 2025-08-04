@@ -6,11 +6,15 @@ export function letterFocus() {
     let homeAside = document.getElementById('homeAside')
     let lastFocusedSideEl = null
     let focusedSideBarLinks = false
-    sideBar.addEventListener('focus',()=> {
-        focusedSideBarLinks = true
-    })
-    sideBar.addEventListener('focusout',()=>{
-        focusedSideBarLinks = false
+    sideBarLinks.forEach(el => {
+        el.addEventListener('focus',e => {
+            focusedSideBarLinks = true
+            lastFocusedSideEl = e.target
+        })
+        el.addEventListener('focusout',()=>{
+            focusedSideBarLinks = false
+        })
+
     })
     if (letterFocusInitialized) return; // ✅ prevent double-binding
     letterFocusInitialized = true;
@@ -44,15 +48,7 @@ export function letterFocus() {
         const key = e.key.toLowerCase();
         if(key ===  'shift'){keys.shift.pressed = true} 
         if(key == 'meta'){keys.meta.pressed = true} 
-        if (key == 's'){
-            // keys.s.pressed = true
-            console.log(focusedSideBarLinks)
-            if(!focusedSideBarLinks){
-                if(lastFocusedSideEl){
-                    lastFocusedSideEl.focus()
-                }
-            }
-        }
+        
         if(keys.shift.pressed && keys.meta.pressed && keys.s.pressed){
             const searchQueryInput = document.querySelector('.search-query > input')
             searchQueryInput.focus()
@@ -80,35 +76,43 @@ export function letterFocus() {
         const active = document.activeElement;
         const currentIndexInFiltered = letteredEls.indexOf(active);
         if(!e.meta){
-            if (key !== window.lastLetterPressed) {
-                newIndex = e.shiftKey ? letteredEls.length - 1 : 0;
+            if(key === 's' && !focusedSideBarLinks && lastFocusedSideEl){
+                console.log('focus')
+                lastFocusedSideEl.focus()
             } else {
-                newIndex = e.shiftKey
-                    ? (currentIndexInFiltered - 1 + letteredEls.length) % letteredEls.length
-                    : (currentIndexInFiltered + 1) % letteredEls.length;
-            }
-            const nextEl = letteredEls[newIndex];
-            if (nextEl) {
-                if (!nextEl.hasAttribute('tabindex')) {
-                    nextEl.setAttribute('tabindex', '0');
+                if (key !== window.lastLetterPressed) {
+                    newIndex = e.shiftKey ? letteredEls.length - 1 : 0;
+                } else {
+                    newIndex = e.shiftKey
+                        ? (currentIndexInFiltered - 1 + letteredEls.length) % letteredEls.length
+                        : (currentIndexInFiltered + 1) % letteredEls.length;
                 }
-                nextEl.focus();              
-            }
-            window.lastLetterPressed = key;
-            if(keys.shift.pressed && keys.meta.pressed && keys.s.pressed){
-                const searchQueryInput = document.querySelector('.search-query > input')
-                searchQueryInput.focus()
-            } else {
-                keys.shift.pressed = false
-                keys.meta.pressed = false
-                keys.s.pressed = false
+                const nextEl = letteredEls[newIndex];
+                if (nextEl) {
+                    if (!nextEl.hasAttribute('tabindex')) {
+                        nextEl.setAttribute('tabindex', '0');
+                    }
+                    nextEl.focus();              
+                }
+                window.lastLetterPressed = key;
+                if(keys.shift.pressed && keys.meta.pressed && keys.s.pressed){
+                    const searchQueryInput = document.querySelector('.search-query > input')
+                    searchQueryInput.focus()
+                } else {
+                    keys.shift.pressed = false
+                    keys.meta.pressed = false
+                    keys.s.pressed = false
+                }        
             }        
-            if(focusedSideBarLinks){
-                lastFocusedSideEl = nextEl
-            }
-            if(!focusedSideBarLinks && keys.s.pressed && lastFocusedSideEl ){
-                // lastFocusedSideEl.focus()
-            }
+          
         } 
+        if (key == 's'){
+            // keys.s.pressed = false
+            console.log(focusedSideBarLinks)
+            console.log(lastFocusedSideEl)
+            if(!focusedSideBarLinks && lastFocusedSideEl){
+                lastFocusedSideEl.focus()
+            }
+        }
     });    
 }

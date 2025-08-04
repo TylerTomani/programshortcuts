@@ -3,7 +3,7 @@ import { stepFocus } from "../videos-page/js/step-focus.js";
 import { playVids } from "../videos-page/js/play-vid.js";
 
     
-export const sideBarLinks = document.querySelectorAll(' .side-bar-ul-container li a');
+export const sideBarLinks = document.querySelectorAll(' .side-bar-ul-container li a, #sideBarBtn');
 export const mainLandingPage = document.querySelector('.main-landing-page');
 
 let lastPageClicked
