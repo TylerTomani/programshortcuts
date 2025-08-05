@@ -6,7 +6,7 @@ dropTopics.forEach(el => {
     const parentUl = el.closest('li')
     const ul = parentUl.querySelector('ul')
     console.log(ul)
-    ul.classList.add('hide')
+    ul?.classList.add('hide')
     el.addEventListener('click', toggleSubTopics)
     el.addEventListener('focusout', ()=>{
         clickedListItem = ''
@@ -16,7 +16,6 @@ function toggleSubTopics(e){
     const parentUl = e.target.closest('li')
     const ul = parentUl.querySelector('ul')
     if(!ul){
-        
         if(e.target == clickedListItem){
             mainLandingPage.focus()
         }
@@ -30,14 +29,11 @@ function toggleSubTopics(e){
         console.log('yes')
         if(ul.classList.contains('hide')){
             ul.classList.remove('hide')
-        }
-        
+        }   
     } else {
-        fetchHtml(e.target.href)
-        
-
+        if(e.target.href){
+            fetchHtml(e.target.href)
+        }
     }
-    
-    
     clickedListItem = e.target
 }

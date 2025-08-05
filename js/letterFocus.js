@@ -6,6 +6,17 @@ export function letterFocus() {
     let homeAside = document.getElementById('homeAside')
     let lastFocusedSideEl = null
     let focusedSideBarLinks = false
+    const allAs = document.querySelectorAll('a')
+    allAs.forEach(a => {
+        if(a.hasAttribute('target')){
+            a.addEventListener('click', e => {
+                console.log(a)
+                console.log(e.target)
+                console.log(a.href)
+                window.open(a.href,'_blank')    
+            })
+        }        
+    })
     sideBarLinks.forEach(el => {
         el.addEventListener('focus',e => {
             focusedSideBarLinks = true

@@ -2,17 +2,23 @@ import { letterFocus } from "./letterFocus.js";
 import { stepFocus } from "../videos-page/js/step-focus.js";
 import { playVids } from "../videos-page/js/play-vid.js";
 
-    
 export const sideBarLinks = document.querySelectorAll(' .side-bar-ul-container li a, #sideBarBtn');
 export const mainLandingPage = document.querySelector('.main-landing-page');
 
 let lastPageClicked
 let clickedLink = false
-const allAs = document.querySelectorAll('a')
-// allAs.forEach(a => {
+// const allAs = document.querySelectorAll('a')
+// function updatePageContainerAs(){
+//     return document.querySelectorAll('.page-container a')
+// }
+// let pageContainerAs = updatePageContainerAs()
+// pageContainerAs.forEach(a => {
 //     if(a.hasAttribute('target')){
 //         a.addEventListener('click', e => {
-//             window.open(e.target.href,'_blank')
+//             // e.preventDefault()
+//             console.log(a)
+//             console.log(e.target)
+
 //         })
 //     }
         
@@ -21,7 +27,7 @@ sideBarLinks.forEach(link => {
     
     if(link.hasAttribute('autofocus')){
         // console.log(link)
-        fetchHtml(link.href)    
+        fetchHtml(link.href) 
     }
     link.addEventListener('click',(e) => {
         e.preventDefault();
@@ -39,6 +45,7 @@ sideBarLinks.forEach(link => {
         //         el.removeAttribute('autofocus')
         //     }
         // })
+        console.log(e.target)
     });
     link.addEventListener('keydown', e => {
         let key = e.key.toLowerCase()
@@ -112,4 +119,4 @@ function openPageLinks(aLinks){
     
 }
 
-// letterFocus()
+
