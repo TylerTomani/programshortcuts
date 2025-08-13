@@ -2,23 +2,28 @@
 .items-container{
     display: flex;
     flex-wrap: wrap;
+    /* background-color: red; */
+}
+.items-container > .item{
+    display: inline-block;
+    border: 2px solid blue;
 }
 .items-container > .videos-collection {
-    border: 2px solid blue;
-    /* display: flex; */
+    display: flex;
+    flex-direction: column;
 }
-.items-container >.item-container {
-    background-color:   blue;
-}
-.item-container > .item,
+
+/* .item-container > .item, */
 .videos-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-grow: 1;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 .video-container {
     flex-basis: 24%;
-    display: inline-block;
+    display: inline-block;    
     
 }
 
