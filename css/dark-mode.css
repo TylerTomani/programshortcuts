@@ -28,3 +28,7 @@ background: linear-gradient(135deg,
 .dark-mode .page-container{
     color: var(--color-dark-mode);
 }
+
+.dark-mode main {
+    background-color: rgb(27, 27, 29);
+}

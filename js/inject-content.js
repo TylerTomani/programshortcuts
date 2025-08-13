@@ -2,14 +2,14 @@ import { letterFocus } from "./letterFocus.js";
 import { stepFocus } from "../videos-page/js/step-focus.js";
 import { playVids } from "../videos-page/js/play-vid.js";
 
-
+import { sideBarLinks } from "./main-script.js";
 export const mainLandingPage = document.querySelector('.main-landing-page');
 
-let lastPageClicked
-let clickedLink = false
 
 
-export async function fetchHtml(href) {
+
+
+export async function injectContent(href) {
     fetch(href)
         .then(response => response.text())
         .then(html => {

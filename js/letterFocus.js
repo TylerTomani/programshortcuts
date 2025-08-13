@@ -1,4 +1,4 @@
-import { sideBarLinks } from "./injectPage.js";
+import { sideBarLinks } from "./main-script.js";
 import { mainLandingPage } from "./injectPage.js";
 let letterFocusInitialized = false;
 const sideBar = document.querySelector('.side-bar')
