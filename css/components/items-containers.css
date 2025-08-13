@@ -1,0 +1,29 @@
+.page-container {
+    /* margin: 0 5%;     */
+}
+.masthead-container {
+    background-image: url('../../img/shorcut-icon2.png');
+    height: 5vh;
+}
+.content-header img {
+    max-height: 150px;
+}
+.items-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.items-container > .videos-collection {
+    border: 2px solid blue;
+    /* display: flex; */
+}
+.videos-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video-container {
+    flex-basis: 24%;
+    display: inline-block;
+    
+}
+
