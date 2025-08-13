@@ -43,7 +43,7 @@ function openPageLinks(aLinks){
             const href = link.getAttribute('href');
             // Optional: check that it's a local/internal link
             if (!href.startsWith('http')) {
-                fetchHtml(href);
+                injectContent(href);
             }
         }
         link.addEventListener('focus', (e) => {
@@ -57,7 +57,7 @@ function openPageLinks(aLinks){
 
             // Optional: check that it's a local/internal link
             if (!href.startsWith('http')) {
-                fetchHtml(href);
+                injectContent(href);
             }
         });
     })
