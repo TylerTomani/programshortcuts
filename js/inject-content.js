@@ -32,7 +32,7 @@ function openPageLinks(aLinks){
             if (!anchor) return;
             const href = anchor.getAttribute('href');
             if (!href) return;
-
+            letterFocus()
             // Optional: check that it's a local/internal link
             if (!href.startsWith('http')) {
                 injectContent(href);

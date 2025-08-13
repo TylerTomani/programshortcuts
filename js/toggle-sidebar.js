@@ -4,15 +4,25 @@ const sideBarUlContainer = document.querySelector('.side-bar-ul-container')
 const listItemsSideBar = document.querySelectorAll('.side-bar-content > .side-bar > ul > li a')
 let iItemIndex = 0
 function toggleSideBar(){
-    sideBar.classList.toggle('active')
+    sideBar.classList.toggle('hide')
+    
 }
-toggleSideBar()
+function toggleActive(currentTarget){
+    sideBar.classList.toggle('active')
+    
+}
+// toggleSideBar()
 if(sideBarBtn && sideBar){
     [sideBarBtn,sideBar,sideBarUlContainer].forEach(el => {
         el.addEventListener('click', e => {
-            if(e.target == sideBar){
-                toggleSideBar()
+            e.preventDefault()
+            e.stopPropagation()
+
+            if(e.currentTarget.classList.contains('side-bar')){
+                toggleActive(e.currentTarget)
+                return
             }
+            toggleSideBar()
         })
     })
     sideBarBtn.addEventListener('keydown', e => {
@@ -23,23 +33,9 @@ if(sideBarBtn && sideBar){
             // sideBar.classList.toggle('hidden')
         }
     })
-    sideBarBtn.addEventListener('click', e => {
-        sideBar.classList.toggle('hidden')
-        if(sideBar.classList.contains('hidden')){
-        }
-        toggleSideBar()
-        
-    })
+
     addEventListener('keydown', e => {
         let letter = e.key.toLowerCase()
-        if(letter == 's'){
-            if(!sideBar.classList.contains('active')){
-                sideBar.classList.add('active')
-            }
-            if(sideBar.classList.contains('hidden')){
-                sideBar.classList.remove('hidden')
-            }
-        }
         // if(letter == 'a'){
         //     // if(!sideBar.classList.contains('active')){
         //     //     sideBar.classList.add('active')

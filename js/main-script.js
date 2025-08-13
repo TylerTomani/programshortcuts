@@ -1,6 +1,7 @@
 import { injectContent } from "./inject-content.js";
 import { letterFocus } from "./letterFocus.js";
 import { darkMode } from "./dark-mode.js";
+// import
 export const sideBarLinks = document.querySelectorAll(' .side-bar-ul-container li a, #sideBarBtn');
 let clickedLink = false
 let lastPageClicked
@@ -41,7 +42,7 @@ sideBarLinks.forEach(link => {
             // mainLandingPage.focus()
         } else if(key == 'enter'){
             clickedLink = true
-            letterFocus()
+        
             injectContent(e.target.href)
         
         }
