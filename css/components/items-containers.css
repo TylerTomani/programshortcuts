@@ -5,8 +5,9 @@
     /* background-color: red; */
 }
 .items-container > .item{
-    display: inline-block;
+    display: inline-flex;
     border: 2px solid blue;
+    flex-direction: column;
 }
 .items-container > .videos-collection {
     display: flex;
