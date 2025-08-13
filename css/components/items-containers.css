@@ -8,6 +8,7 @@
     display: inline-flex;
     border: 2px solid blue;
     flex-direction: column;
+    text-decoration: none;
 }
 .items-container > .videos-collection {
     display: flex;
@@ -21,6 +22,9 @@
     align-items: flex-start;
     flex-direction: column;
     justify-content: flex-start;
+}
+.videos-container a {
+    color: black;
 }
 .video-container {
     flex-basis: 24%;

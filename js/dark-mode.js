@@ -1,4 +1,6 @@
 
+export function darkMode(){
+
 
 
   addEventListener('keydown', e => {
@@ -14,3 +16,4 @@
     } else {
     }
   });
+}

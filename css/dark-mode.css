@@ -29,6 +29,11 @@ background: linear-gradient(135deg,
     color: var(--color-dark-mode);
 }
 
+
+.dark-mode .item,
+.dark-mode .videos-container a{
+    color: whitesmoke;
+}
 .dark-mode main {
     background-color: rgb(27, 27, 29);
 }

@@ -1,8 +1,10 @@
 import { injectContent } from "./inject-content.js";
 import { letterFocus } from "./letterFocus.js";
+import { darkMode } from "./dark-mode.js";
 export const sideBarLinks = document.querySelectorAll(' .side-bar-ul-container li a, #sideBarBtn');
 let clickedLink = false
 let lastPageClicked
+darkMode()
 letterFocus()
 sideBarLinks.forEach(link => {
     

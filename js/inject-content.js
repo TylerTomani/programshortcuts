@@ -6,7 +6,7 @@ import { sideBarLinks } from "./main-script.js";
 export const mainLandingPage = document.querySelector('.main-landing-page');
 
 
-
+    
 
 
 export async function injectContent(href) {
