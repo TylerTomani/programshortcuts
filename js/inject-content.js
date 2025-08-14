@@ -1,19 +1,18 @@
 import { letterFocus } from "./letterFocus.js";
-import { stepFocus } from "../videos-page/js/step-focus.js";
-import { playVids } from "../videos-page/js/play-vid.js";
+
 export const mainLandingPage = document.querySelector('.main-landing-page');
 export async function injectContent(href) {
-    fetch(href)
-        .then(response => response.text())
-        .then(html => {
-            mainLandingPage.innerHTML = ``
-            mainLandingPage.innerHTML = html
-            const aLinks = mainLandingPage.querySelectorAll('.page-container a')
-            openPageLinks(aLinks)
-            stepFocus()
-            playVids()
-            letterFocus()
-        })
+    if(href){
+        fetch(href)
+            .then(response => response.text())
+            .then(html => {
+                mainLandingPage.innerHTML = ``
+                mainLandingPage.innerHTML = html
+                const aLinks = mainLandingPage.querySelectorAll('.page-container a')
+                openPageLinks(aLinks)
+                letterFocus()
+            })
+    }
 }
 function openPageLinks(aLinks){
     aLinks.forEach(link => {

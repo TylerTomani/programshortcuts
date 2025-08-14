@@ -30,7 +30,6 @@ sideBarLinks.forEach(link => {
         //     }
         // })
         letterFocus()
-        console.log(e.target)
     });
     link.addEventListener('keydown', e => {
         let key = e.key.toLowerCase()

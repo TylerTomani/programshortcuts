@@ -1,8 +1,9 @@
 import { sideBarLinks } from "./main-script.js";
+import { sideBarBtn } from "./toggle-sidebar.js";
 import { mainLandingPage } from "./injectPage.js";
 let letterFocusInitialized = false;
 const sideBar = document.querySelector('.side-bar')
-export function letterFocus() {
+    export function letterFocus() {
     let homeAside = document.getElementById('homeAside')
     let lastFocusedSideEl = null
     let focusedSideBarLinks = false
@@ -18,6 +19,10 @@ export function letterFocus() {
         }        
     })
     sideBarLinks.forEach(el => {
+        if(el.hasAttribute('autofocus')){
+            lastFocusedSideEl = el
+        }
+        
         el.addEventListener('focus',e => {
             focusedSideBarLinks = true
             lastFocusedSideEl = e.target
@@ -68,12 +73,12 @@ export function letterFocus() {
             keys.s.pressed = false
             return 
         } 
-        const allEls = [...document.querySelectorAll('.side-bar li a, a[id]')].filter(el => {
+        const allEls = [...document.querySelectorAll('.side-bar li a, [id]')].filter(el => {
             const rect = el.getBoundingClientRect();
             return el.offsetParent !== null && rect.width > 0 && rect.height >= 0;
         });
         // checking if element are lower on the page
-        const letteredEls = [...document.querySelectorAll('a, [id]')].filter(el => {
+        const letteredEls = [...document.querySelectorAll('a, [id],i[id]')].filter(el => {
           const rect = el.getBoundingClientRect();
             return (
             getComputedStyle(el).visibility !== 'hidden' &&
@@ -117,10 +122,13 @@ export function letterFocus() {
             }        
           
         } 
-        if (key == 's'){
+        if(e.target.id == 'shortcutsAside' && key == 's'){
+            sideBarBtn.focus()
+        }
+        // This is sloppy handling of focusing to #sideBarBtn from #shortcutsAside
+        // But it's working
+        if (key == 's' ){
             // keys.s.pressed = false
-            console.log(focusedSideBarLinks)
-            console.log(lastFocusedSideEl)
             if(!focusedSideBarLinks && lastFocusedSideEl){
                 lastFocusedSideEl.focus()
             }
