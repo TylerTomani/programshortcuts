@@ -129,6 +129,9 @@ const sideBar = document.querySelector('.side-bar')
         // But it's working
         if (key == 's' ){
             // keys.s.pressed = false
+            if(sideBar.classList.contains('hide')){
+                sideBar.classList.remove('hide')
+            }
             if(!focusedSideBarLinks && lastFocusedSideEl){
                 lastFocusedSideEl.focus()
             }
