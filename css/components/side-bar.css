@@ -60,10 +60,7 @@
   /* background-color: blue; */
 }
 .side-bar.hide {
-  /* width: var(--side-bar-hide); */
-  /* display: none; */
-  /* width: 50px; */
-  /* flex-basis: 50%; */
+  display: hidden;
 }
 .side-bar.hide .side-bar-ul-container .topics > li a .nav-item,
 .side-bar.hide .side-bar-ul-container .topics > li > ul {
@@ -71,7 +68,6 @@
 
 }
 .side-bar i#sideBarBtn{
-  /* display: inline-flex; */
   margin: 0 auto;
   color: whitesmoke;
   margin-top: 25%;
