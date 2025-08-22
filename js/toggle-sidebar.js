@@ -4,15 +4,15 @@ const sideBarUlContainer = document.querySelector('.side-bar-ul-container')
 const listItemsSideBar = document.querySelectorAll('.side-bar-content > .side-bar > ul > li a')
 let iItemIndex = 0
 function toggleSideBar(){
-    if(!sideBar.classList.contains('hide') && sideBar.classList.contains('active')){
-        console.log('yes')
-        sideBar.classList.remove('active')
-        sideBar.classList.remove('hide')
-        return
-    } else {
+    // if(!sideBar.classList.contains('hide') && sideBar.classList.contains('active')){
+    //     console.log('yes')
+    //     sideBar.classList.remove('active')
+    //     sideBar.classList.remove('hide')
+    //     return
+    // } else {
 
-        sideBar.classList.toggle('hide')
-    }
+    // }
+    sideBar.classList.toggle('hide')
 
 }
 function toggleActive(){
@@ -34,8 +34,10 @@ if(sideBarBtn && sideBar){
             if(e.currentTarget.classList.contains('side-bar')){
                 toggleActive()
                 return
+            } else {
+
+                // toggleSideBar()
             }
-            toggleSideBar()
         })
     })
     sideBarBtn.addEventListener('click', e => {
