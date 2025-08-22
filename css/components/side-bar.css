@@ -7,6 +7,7 @@
 .page-wrapper > .main-content {
   flex-basis: var(--main-content);
   flex-grow: 1;
+  margin-left: 10%;
 }
 .side-bar > header img {
   position: absolute;
