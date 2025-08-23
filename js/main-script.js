@@ -1,21 +1,21 @@
+import {sideBarTopicsAs,hideSubTopicsUls,toggleSideBar,toggleActive, toggleSubTopicUl } from "./toggle-sidebar.js";
 import { injectContent } from "./inject-content.js";
 import { letterFocus } from "./letterFocus.js";
 import { darkMode } from "./dark-mode.js";
 // import
-export const sideBarLinks = document.querySelectorAll(' .side-bar-ul-container li a, #sideBarBtn');
 let clickedLink = false
 let lastPageClicked
 darkMode()
 letterFocus()
-sideBarLinks.forEach(link => {
-    
+
+sideBarTopicsAs.forEach(link => {    
     if(link.hasAttribute('autofocus')){
-        // console.log(link)
         injectContent(link.href) 
     }
     link.addEventListener('click',(e) => {
         e.preventDefault();
         e.stopPropagation();
+        const topicUl = e.target.parentElement.parentElement
         if(e.target.hasAttribute('target')){
             return
         }
@@ -23,12 +23,7 @@ sideBarLinks.forEach(link => {
         const anchor = e.target.closest('a');
         if (!anchor) return;
         injectContent(anchor.getAttribute('href'));
-        // const aLinks = mainLandingPage.querySelectorAll('.page-container a')
-        // aLinks.forEach(el => {
-        //     if(el.hasAttribute('autofocus')){
-        //         el.removeAttribute('autofocus')
-        //     }
-        // })
+        
         letterFocus()
     });
     link.addEventListener('keydown', e => {

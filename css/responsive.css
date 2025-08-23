@@ -57,6 +57,9 @@
     color: lightslategray;
     transform: translate(102%, -100%);
   }
+  :root{
+    --width-side-active: 20vw;
+  }
 }
 @media screen and (max-width: 420px) {
   .side-bar .side-bar-ul-container {
@@ -64,12 +67,13 @@
 
     /* border: 2px solid magenta; */
 
+    margin: 0;
   }
   .side-bar .side-bar-ul-container > ul li > ul{
     /* border: 2px solid orange; */
     font-size: 90%;
     line-height: 0;
-    /* margin: 0; */
+    margin: 0;
   }    
   .side-bar .side-bar-ul-container > ul li > ul li{
     /* line-height: 1; */

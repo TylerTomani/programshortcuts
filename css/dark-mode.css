@@ -20,7 +20,7 @@ background: linear-gradient(135deg,
 }
 .dark-mode #sideBarBtn{
     /* color: var(--color-dark-mode) !important; */
-
+    color: white;
 }
 .dark-mode .step-txt{
     color: var(--color-dark-mode) ;

@@ -1,20 +1,20 @@
 :root {
-  --width-side-bar: 8vw;
+  --width-side-bar: 10vw;
   --width-side-hide: 2vw;
-  --width-side-active: 12vw;
+  --width-side-active: 15vw;
 }
 /* ========== MAIN-CONTENT WHEN SIDEBAR IS HIDDEN ========== */
-.side-bar.hidden + .main-content {
-  flex-grow: 1;
-  width: 100% - var(--width-side-hide);
+.side-bar.hide + .main-content {
+  /* flex-grow: 1; */
+  /* width: 100% - var(--width-side-hide); */
 }
 .side-bar.active + .main-content {
-  flex-grow: 1;
-  width: 100% - var(--width-side-active);
+  /* flex-grow: 1; */
+  /* width: 100% - var(--width-side-active); */
 }
 /* ========== SIDEBAR ========== */
 .side-bar {
-  flex-basis: var(--width-side-bar);
+  /* flex-basis: var(--width-side-bar); */
   width: var(--width-side-bar);
   position: fixed;
   display: flex;
@@ -24,16 +24,16 @@
   z-index: 1;
 }
 .side-bar.active {
-  flex-basis: var(--width-side-active);
+  width: var(--width-side-active) !important;
  
 }
 .side-bar.hide {
-  width: var(--width-side-hide) !important;
+  /* width: var(--width-side-hide) !important; */
   /* display: none; */
 
 }
 #sideBarBtn {
-   position: fixed;
+  position: fixed;
   bottom: 2%;
   left: 1%;
   z-index: 999;
@@ -46,14 +46,13 @@
   
 }
 .side-bar.hide + #sideBarBtn{
-  color: black;
+  /* color: black; */
+  /* position: absolute; */
 }
 .side-bar.active + #sideBarBtn {
-  color: white;
+  /* color: white; */
 }
-.dark-mode  #sideBarBtn {
-  color: white;
-}
+
 
 /* ========== CHILD ELEMENTS ========== */
 .side-bar header {
@@ -90,15 +89,14 @@
 }
 
 .side-bar.active .side-bar-ul-container ul > li > ul {
-
   display: none;
 }
 .side-bar .side-bar-ul-container ul > li > ul {
-    margin-left: 20%;
-  display: none;
+  margin-left: 20%;
+  /* display: none; */
   color: white;
 }
-
+/* .side-bar .side-bar-ul-container ul > li > ul.hide {display: none;} */
 .side-bar.active .side-bar-ul-container ul > li > ul {
   display: inline-block;
   color: rgb(69, 146, 99);
@@ -117,6 +115,6 @@
 .side-bar .nav-item {
   color: white;
 }
-/* .hide {
+.hide {
   display: none !important;
-} */
+}
