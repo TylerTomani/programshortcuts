@@ -1,5 +1,5 @@
 import { sideBarTopicsAs,sideBarBtn } from "./toggle-sidebar.js";
-import { mainLandingPage } from "./injectPage.js";
+import { mainLandingPage } from "./inject-content.js";
 let letterFocusInitialized = false;
 const sideBar = document.querySelector('.side-bar')
     export function letterFocus() {

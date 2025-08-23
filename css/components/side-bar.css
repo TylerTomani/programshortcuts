@@ -2,6 +2,9 @@
   --width-side-bar: 10vw;
   --width-side-hide: 2vw;
   --width-side-active: 15vw;
+  --width-main-content: 90vw;
+  --width-main-content-hide: 98vw;
+  --width-main-content-active: 85vw;
 }
 /* ========== MAIN-CONTENT WHEN SIDEBAR IS HIDDEN ========== */
 .side-bar.hide + .main-content {
@@ -28,8 +31,18 @@
  
 }
 .side-bar.hide {
-  /* width: var(--width-side-hide) !important; */
+  width: var(--width-side-hide);
   /* display: none; */
+
+}
+.side-bar ul li ul  {
+  display: none;
+}
+.side-bar.active ul li ul  {
+  display: block;
+}
+.side-bar.hide .nav-item  {
+  display: none;
 
 }
 #sideBarBtn {
@@ -52,8 +65,6 @@
 .side-bar.active + #sideBarBtn {
   /* color: white; */
 }
-
-
 /* ========== CHILD ELEMENTS ========== */
 .side-bar header {
   top: 0;
@@ -67,8 +78,6 @@
     display: flex;
     flex-direction: column;   
 }
-
-
 .side-bar-ul-container > ul {
   margin-left: 10%;
   gap: 2rem;
@@ -110,11 +119,10 @@
   color: white;
   max-width: 30px;
 }
-
 /* Sidebar nav item */
 .side-bar .nav-item {
   color: white;
 }
-.hide {
+/* .hide {
   display: none !important;
-}
+} */

@@ -6,7 +6,6 @@ h1 {
     margin:1% 0;
     margin-right: 5%;
 }
-
 main > .main-content > header {
     left: 0;
     top: 0;
@@ -23,4 +22,14 @@ main > .main-content > header {
 }
 .items-container > .item {
     margin: 0 2.5%;
+}
+.page-wrapper > .main-content {
+  position: fixed;
+  right: 0;
+}
+.side-bar.hide + .main-content{
+    width: 100% - var(--width-main-content-hide);
+}
+.side-bar.hide + .main-content{
+    width: 100vw
 }

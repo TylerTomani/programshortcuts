@@ -2,7 +2,7 @@ import {sideBarTopicsAs,hideSubTopicsUls,toggleSideBar,toggleActive, toggleSubTo
 import { injectContent } from "./inject-content.js";
 import { letterFocus } from "./letterFocus.js";
 import { darkMode } from "./dark-mode.js";
-// import
+
 let clickedLink = false
 let lastPageClicked
 darkMode()

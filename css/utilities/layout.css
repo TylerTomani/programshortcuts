@@ -3,8 +3,9 @@
 }
 
 .page-wrapper > .main-content {
-  flex-grow: 1;
-  flex-shrink: 1;
+  position: fixed;
+  right: 0;
+  width: var(--width-main-content);
 }
 
 .main-search-nav {

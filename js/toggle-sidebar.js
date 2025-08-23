@@ -24,11 +24,11 @@ export function toggleActive(){
     } else {
         sideBar.classList.toggle('active')
     }
-    if(sideBar.classList.contains('active')){
-        showSubTopicUls()
-    } else {
-        hideSubTopicsUls()
-    }
+    // if(sideBar.classList.contains('active')){
+    //     showSubTopicUls()
+    // } else {
+    //     hideSubTopicsUls()
+    // }
 }
 // toggleSideBar()
 if(sideBarBtn && sideBar){
