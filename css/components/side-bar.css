@@ -1,10 +1,10 @@
 :root {
-  --width-side-bar: 10vw;
+  --width-side-bar: 15vw;
   --width-side-hide: 2vw;
-  --width-side-active: 15vw;
   --width-main-content: 90vw;
   --width-main-content-hide: 98vw;
-  --width-main-content-active: 85vw;
+  --width-main-content-active: 75vw;
+  --width-side-active: 25vw;
 }
 /* ========== MAIN-CONTENT WHEN SIDEBAR IS HIDDEN ========== */
 .side-bar.hide + .main-content {
@@ -61,6 +61,13 @@
 .side-bar.hide + #sideBarBtn{
   /* color: black; */
   /* position: absolute; */
+}
+.side-bar.hide #sideBarBtn {
+  color: black !important;
+  /* border: 10px solid magenta; */
+}
+.side-bar.hide #sideBarBtn:active {
+  /* border: none; */
 }
 .side-bar.active + #sideBarBtn {
   /* color: white; */

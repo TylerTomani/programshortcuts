@@ -76,7 +76,7 @@
     margin: 0;
   }    
   .side-bar .side-bar-ul-container > ul li > ul li{
-    /* line-height: 1; */
+    line-height: 1;
     font-size: 90%;
     margin: 0;
 
