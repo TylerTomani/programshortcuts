@@ -1,8 +1,8 @@
 :root {
-  --width-side-bar: 15vw;
-  --width-side-hide: 2vw;
   --width-main-content: 90vw;
+  --width-side-bar: 10vw;
   --width-main-content-hide: 98vw;
+  --width-side-hide: 2vw;
   --width-main-content-active: 75vw;
   --width-side-active: 25vw;
 }
