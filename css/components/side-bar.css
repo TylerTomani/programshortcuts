@@ -12,7 +12,7 @@
   /* width: 100% - var(--width-side-hide); */
 }
 .side-bar.active + .main-content {
-  /* flex-grow: 1; */
+  flex-grow: 1;
   /* width: 100% - var(--width-side-active); */
 }
 /* ========== SIDEBAR ========== */

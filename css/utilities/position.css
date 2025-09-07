@@ -1,6 +1,10 @@
 .page-wrapper {
     /* position: relative; */
 }
+.page-wrapper > .main-content {
+  position: fixed;
+  right: 0;
+}
 h1 {
     text-align: end;
     margin:1% 0;
