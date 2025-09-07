@@ -9,11 +9,11 @@
 /* ========== MAIN-CONTENT WHEN SIDEBAR IS HIDDEN ========== */
 .side-bar.hide + .main-content {
   /* flex-grow: 1; */
-  width: 100% - var(--width-side-hide);
+  /* width: 100% - var(--width-side-hide); */
 }
 .side-bar.active + .main-content {
   /* flex-grow: 1; */
-  width: 100% - var(--width-side-active);
+  /* width: 100% - var(--width-side-active); */
 }
 /* ========== SIDEBAR ========== */
 .side-bar {
