@@ -1,5 +1,6 @@
 // I need to get async down this is inefficent
 let playing = false
+let clickedVidEnlarged = false
 export function playVids(){
     
     const stepTxts = document.querySelectorAll('.step-txt')
@@ -23,6 +24,7 @@ export function playVids(){
     */
     stepTxts.forEach(el => {
         el.addEventListener('focus', e => {
+            clickedVidEnlarged = false
             const step = getStep(e.target.parentElement)
             const vid = step.querySelector('video')
             denlargeAllVideos()
@@ -71,8 +73,7 @@ export function playVids(){
         switch (keyCode) {
             case 13: // Enter
                 // denlargeAllVideos()
-                e.target.scrollIntoView({behavior: 'smooth', inline: 'end'})
-                console.log(e.target)
+                e.target.scrollIntoView({behavior: 'smooth', inline: 'center'})
                 playing = true;
                 if(playing && vid.classList.contains('enlarge-vid')){
                     playing = !playing
@@ -99,6 +100,7 @@ export function playVids(){
         console.log(e.target)
         // denlargeAllVideos()
         const step = getStep(vid.parentElement)
+        
         step.classList.toggle('relative')
         vid.classList.toggle('enlarge-vid')
         

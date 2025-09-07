@@ -1,12 +1,14 @@
 .page-wrapper {
   display: flex;
 }
-
-
-
 .main-search-nav {
   display: flex;
   justify-content: flex-end;
+}
+
+.main-landing-page {
+  overflow-y: scroll;
+
 }
 .items-container{
   display: flex;
