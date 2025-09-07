@@ -10,6 +10,7 @@ darkMode()
 keyboardNav()
 dragHideSideBar()
 
+
 sideBarTopicsAs.forEach(link => {    
     if(link.hasAttribute('autofocus')){
         injectContent(link.href) 
