@@ -1,5 +1,3 @@
-// import { letterFocus } from "./letterFocus.js";
-// import { keyboardNav } from "./nav/keyboard-nav.js";
 import { keyboardNav } from "./nav/keyboard-nav.js";
 
 export const mainLandingPage = document.querySelector('.main-landing-page');
@@ -25,6 +23,9 @@ function openPageLinks(aLinks){
                 injectContent(href);
             } 
             
+        }
+        if(link.id === 'loadLink'){
+            injectContent(link.href)
         }
         link.addEventListener('focus', (e) => {
         })
