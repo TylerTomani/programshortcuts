@@ -85,4 +85,7 @@
     /* --width-main-content: 90vw; */
     /* --width-side-bar: 15vw; */
   }
+  .main-landing-page {
+    margin-left: 1%;
+  }
 }
