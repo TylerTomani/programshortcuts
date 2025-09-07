@@ -14,19 +14,7 @@ main > .main-content > header {
     left: 0;
     top: 0;
 }
-.page-container{
-    margin: 0 2.5%;
-}
-.content-container {
-    margin: 0 2.5%;
-}
 
-.items-container {
-    margin-top: 2.5%;
-}
-.items-container > .item {
-    margin: 0 2.5%;
-}
 .page-wrapper > .main-content {
   position: fixed;
   right: 0;

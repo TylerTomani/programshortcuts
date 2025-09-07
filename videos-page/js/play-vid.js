@@ -1,6 +1,7 @@
 // I need to get async down this is inefficent
 let playing = false
 export function playVids(){
+    
     const stepTxts = document.querySelectorAll('.step-txt')
     const allVideos = document.querySelectorAll('video')
     allVideos.forEach(vid => {
@@ -39,10 +40,12 @@ export function playVids(){
             }
         })
         el.addEventListener('keydown', e => {            
+            let key = e.key
             let step = getStep(e.target.parentElement)
             stopAllVideos()
             handleVideo(e,step)
         })
+
     })
     function denlargeAllVideos(){
         allVideos.forEach(el => {

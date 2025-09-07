@@ -1,8 +1,5 @@
-h1 {
-    font-size: 150%;
-}
+
 .page-wrapper > .main-content {
-  /* width: auto; */
   height: 100vh;
   width: var(--width-main-content);  
   

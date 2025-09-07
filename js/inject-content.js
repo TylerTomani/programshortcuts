@@ -2,7 +2,7 @@ import { keyboardNav } from "./nav/keyboard-nav.js";
 import { stepFocus } from "../videos-page/js/step-focus.js";
 import { playVids } from "../videos-page/js/play-vid.js";
 export const mainLandingPage = document.querySelector('.main-landing-page');
-
+let linkLoaded = false
 export async function injectContent(href) {
     if(href){
         fetch(href)
@@ -24,8 +24,10 @@ function openPageLinks(aLinks){
     const AllLinks = document.querySelectorAll('a')
     AllLinks.forEach(el => {
         
-        if(el.id === 'loadLink'){
+        if(el.classList.contains('load-link') && !linkLoaded){
             injectContent(el.href)
+            linkLoaded = false
+            return
         }
     })
     // comment out Above Here when NOT WORKING on this
