@@ -1,12 +1,14 @@
-import {sideBarTopicsAs,hideSubTopicsUls,toggleSideBar,toggleActive, toggleSubTopicUl } from "./toggle-sidebar.js";
+
+import { sideBarTopicsAs } from "./nav/keyboard-nav.js";
 import { injectContent } from "./inject-content.js";
 import { keyboardNav } from "./nav/keyboard-nav.js";
 import { darkMode } from "./dark-mode.js";
-
+import { dragHideSideBar } from "./ui/drag-hide-sidebar.js";
 let clickedLink = false
 let lastPageClicked
 darkMode()
 keyboardNav()
+dragHideSideBar()
 
 sideBarTopicsAs.forEach(link => {    
     if(link.hasAttribute('autofocus')){

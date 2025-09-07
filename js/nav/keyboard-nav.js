@@ -1,5 +1,6 @@
 // import { sideBarTopicsAs,sideBarBtn } from "./toggle-sidebar.js";
-import { sideBarTopicsAs,sideBarBtn } from "../ui/toggle-sidebar.js";
+import { sideBarBtn } from "../ui/toggle-sidebar.js";
+export const sideBarTopicsAs = document.querySelectorAll('ul.topics > li a')
 import { mainLandingPage } from "../inject-content.js";
 let letterFocusInitialized = false;
 const sideBar = document.querySelector('.side-bar')
@@ -61,18 +62,18 @@ export function keyboardNav() {
         })
     })
     document.addEventListener('keydown', e => {
-  const key = e.key.toLowerCase();
+        const key = e.key.toLowerCase();
 
-  // rebuild letteredEls fresh on every keypress
-  const letteredEls = [...document.querySelectorAll('a, [id], i[id]')].filter(el => {
-    const rect = el.getBoundingClientRect();
-    return (
-      getComputedStyle(el).visibility !== 'hidden' &&
-      getComputedStyle(el).display !== 'none' &&
-      rect.width > 0 &&
-      rect.height > 0 &&
-      el.id[0]?.toLowerCase() === key
-    );
+    // rebuild letteredEls fresh on every keypress
+        const letteredEls = [...document.querySelectorAll('a, [id], i[id]')].filter(el => {
+        const rect = el.getBoundingClientRect();
+        return (
+        getComputedStyle(el).visibility !== 'hidden' &&
+        getComputedStyle(el).display !== 'none' &&
+        rect.width > 0 &&
+        rect.height > 0 &&
+        el.id[0]?.toLowerCase() === key
+        );
   });
 
   // force #sideBarBtn in for key "s"

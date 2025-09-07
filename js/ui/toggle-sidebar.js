@@ -24,13 +24,7 @@ export function toggleActive(){
     } else {
         sideBar.classList.toggle('active')
     }
-    // if(sideBar.classList.contains('active')){
-    //     showSubTopicUls()
-    // } else {
-    //     hideSubTopicsUls()
-    // }
 }
-// toggleSideBar()
 if(sideBarBtn && sideBar){
     [sideBar].forEach(el => {
         el.addEventListener('click', e => {
@@ -49,11 +43,6 @@ if(sideBarBtn && sideBar){
         e.stopPropagation()
         hideSubTopicsUls()
         toggleSideBar()
-        // if(sideBar.classList.contains('hide') && sideBar.classList.contains('active')){
-        //     sideBar.classList.remove('hide')
-        //     sideBar.remove('active')
-        // }
-        
     })
     sideBarBtn.addEventListener('keydown', e => {
         let letter = e.key.toLowerCase() 
@@ -64,12 +53,6 @@ if(sideBarBtn && sideBar){
         }
     })
 }
-// sideBarTopicsAs.forEach(el => {
-//     console.log(el)
-//     el.addEventListener('keydown', e =>{
-//         console.log(e.target)
-//     })
-// })
 export function hideSubTopicsUls(){
     subTopicsUls.forEach(el => {
         // console.log(el)
