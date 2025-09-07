@@ -88,4 +88,7 @@
   .main-landing-page {
     margin-left: 1%;
   }
+  #sideBarBtn {
+    bottom: 10%;
+  }
 }

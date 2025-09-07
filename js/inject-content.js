@@ -1,5 +1,6 @@
 import { keyboardNav } from "./nav/keyboard-nav.js";
-
+import { stepFocus } from "../videos-page/js/step-focus.js";
+import { playVids } from "../videos-page/js/play-vid.js";
 export const mainLandingPage = document.querySelector('.main-landing-page');
 
 export async function injectContent(href) {
@@ -12,6 +13,8 @@ export async function injectContent(href) {
                 const aLinks = mainLandingPage.querySelectorAll('.page-container a')
                 openPageLinks(aLinks)
                 keyboardNav()
+                stepFocus()
+                playVids()
             })
     }
 }
