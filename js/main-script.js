@@ -1,12 +1,12 @@
 import {sideBarTopicsAs,hideSubTopicsUls,toggleSideBar,toggleActive, toggleSubTopicUl } from "./toggle-sidebar.js";
 import { injectContent } from "./inject-content.js";
-import { letterFocus } from "./letterFocus.js";
+import { keyboardNav } from "./nav/keyboard-nav.js";
 import { darkMode } from "./dark-mode.js";
 
 let clickedLink = false
 let lastPageClicked
 darkMode()
-letterFocus()
+keyboardNav()
 
 sideBarTopicsAs.forEach(link => {    
     if(link.hasAttribute('autofocus')){
@@ -24,7 +24,7 @@ sideBarTopicsAs.forEach(link => {
         if (!anchor) return;
         injectContent(anchor.getAttribute('href'));
         
-        letterFocus()
+        keyboardNav()
     });
     link.addEventListener('keydown', e => {
         let key = e.key.toLowerCase()

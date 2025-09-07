@@ -1,4 +1,6 @@
-import { letterFocus } from "./letterFocus.js";
+// import { letterFocus } from "./letterFocus.js";
+// import { keyboardNav } from "./nav/keyboard-nav.js";
+import { keyboardNav } from "./nav/keyboard-nav.js";
 
 export const mainLandingPage = document.querySelector('.main-landing-page');
 export async function injectContent(href) {
@@ -10,7 +12,7 @@ export async function injectContent(href) {
                 mainLandingPage.innerHTML = html
                 const aLinks = mainLandingPage.querySelectorAll('.page-container a')
                 openPageLinks(aLinks)
-                letterFocus()
+                keyboardNav()
             })
     }
 }
@@ -31,7 +33,7 @@ function openPageLinks(aLinks){
             if (!anchor) return;
             const href = anchor.getAttribute('href');
             if (!href) return;
-            letterFocus()
+            keyboardNav()
             // Optional: check that it's a local/internal link
             if (!href.startsWith('http')) {
                 injectContent(href);

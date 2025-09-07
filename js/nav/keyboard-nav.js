@@ -1,8 +1,10 @@
-import { sideBarTopicsAs,sideBarBtn } from "./toggle-sidebar.js";
-import { mainLandingPage } from "./inject-content.js";
+// import { sideBarTopicsAs,sideBarBtn } from "./toggle-sidebar.js";
+import { sideBarTopicsAs,sideBarBtn } from "../ui/toggle-sidebar.js";
+import { mainLandingPage } from "../inject-content.js";
 let letterFocusInitialized = false;
 const sideBar = document.querySelector('.side-bar')
-export function letterFocus() {
+
+export function keyboardNav() {
     let homeAside = document.getElementById('homeAside')
     let lastFocusedSideEl = null
     let focusedSideBarLinks = false
