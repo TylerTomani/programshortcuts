@@ -2,7 +2,7 @@ export const sideBarBtn = document.querySelector('#sideBarBtn')
 export const sideBar = document.querySelector('.side-bar')
 const sideBarUlContainer = document.querySelector('.side-bar-ul-container')
 const subTopicsUls = document.querySelectorAll('ul.topics > li > ul.sub-topic')
-export const sideBarTopicsAs = document.querySelectorAll('ul.topics > li a')
+// export const sideBarTopicsAs = document.querySelectorAll('ul.topics > li a')
 
 let iItemIndex = 0
 export function toggleSideBar(){

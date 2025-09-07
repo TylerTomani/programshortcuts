@@ -4,6 +4,14 @@ export const sideBarTopicsAs = document.querySelectorAll('ul.topics > li a')
 import { mainLandingPage } from "../inject-content.js";
 let letterFocusInitialized = false;
 const sideBar = document.querySelector('.side-bar')
+const homeAside = document.querySelector('#homeAside')
+homeAside.addEventListener('click', e => {
+    e.preventDefault()
+        sideBar.classList.toggle('active')
+    // if(sideBar.classList.contains('active')){
+    //     sideBar.classList.remove('active')
+    // }
+})
 
 export function keyboardNav() {
     let homeAside = document.getElementById('homeAside')
