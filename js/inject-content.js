@@ -23,13 +23,14 @@ function openPageLinks(aLinks){
     // Use this when working within sidebar link page
     const AllLinks = document.querySelectorAll('a')
     AllLinks.forEach(el => {
-        console.log(el)
+        
         if(el.id === 'loadLink'){
             injectContent(el.href)
         }
     })
     // comment out Above Here when NOT WORKING on this
     aLinks.forEach(link => {
+        if(link.id === 'codeCmdShortcutPage') return
         if(link.hasAttribute('autofocus') && !clickedLink){
             const href = link.getAttribute('href');
             // Optional: check that it's a local/internal link
