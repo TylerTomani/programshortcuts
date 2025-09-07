@@ -74,7 +74,7 @@ export function playVids(){
                 if(playing && vid.classList.contains('enlarge-vid')){
                     playing = !playing
                 }
-                toggleVideoSize(vid);
+                toggleVideoSize(vid,e);
                 break;
             case 32: // Space
                 e.preventDefault();
@@ -92,7 +92,8 @@ export function playVids(){
 
         playing ? vid.play() : vid.pause();
     }
-    function toggleVideoSize(vid){
+    function toggleVideoSize(vid,e){
+        console.log(e.target)
         // denlargeAllVideos()
         const step = getStep(vid.parentElement)
         step.classList.toggle('relative')
