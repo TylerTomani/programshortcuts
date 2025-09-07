@@ -23,7 +23,8 @@ function openPageLinks(aLinks){
             // Optional: check that it's a local/internal link
             if (!href.startsWith('http')) {
                 injectContent(href);
-            }
+            } 
+            
         }
         link.addEventListener('focus', (e) => {
         })
