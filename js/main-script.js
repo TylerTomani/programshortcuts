@@ -13,10 +13,13 @@ dragHideSideBar()
 sideBarTopicsAs.forEach(link => {    
     if(link.hasAttribute('autofocus')){
         injectContent(link.href) 
+        
     }
+    
     link.addEventListener('click',(e) => {
         e.preventDefault();
         e.stopPropagation();
+            
         const topicUl = e.target.parentElement.parentElement
         if(e.target.hasAttribute('target')){
             return
