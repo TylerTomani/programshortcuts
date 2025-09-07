@@ -5,14 +5,12 @@
 .step > * {
     flex-basis: 50%;
 }
-.step > .step-txt {
-    min-height: fit-content;
-}
 .step-vid > video {
-    
+    border: 20px solid green;
+    z-index: 100
 }
 .step.relative {
-position: relative;    
+    position: relative;    
 }
 video.enlarge-vid {
     position: absolute;
@@ -23,7 +21,12 @@ video.enlarge-vid {
     right: 15%;
     top: -5%;
 }
-
+#macEssentialVideoPage{
+    border: 2px solid magenta;
+    /* margin-left: 4%; */
+    padding-top:  2%;
+    padding-left: 2%;
+}
 @media screen and (max-width:800px){
     .enlarge-vid {
         position: absolute;

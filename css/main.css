@@ -3,7 +3,7 @@
 @import url('components/side-bar.css');
 /* @import url('components/items-containers.css'); */
 
-/* @import url('responsive.css'); */
+@import url('responsive.css');
 
 /* Utities */
 @import url('utilities/background.css');
