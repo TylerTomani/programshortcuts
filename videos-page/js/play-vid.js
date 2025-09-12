@@ -80,7 +80,6 @@ export function playVids(){
             case 13: // Enter
                 // denlargeAllVideos()
                 e.target.scrollIntoView({behavior: 'smooth', inline: 'end'})
-                console.log(e.target)
                 playing = true;
                 if(playing && vid.classList.contains('enlarge-vid')){
                     playing = !playing

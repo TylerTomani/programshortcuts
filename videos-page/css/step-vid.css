@@ -6,7 +6,7 @@
     flex-basis: 50%;
 }
 .step-vid > video {
-    border: 20px solid green;
+    border: 2px solid blue;
     z-index: 100
 }
 .step.relative {
