@@ -38,14 +38,12 @@ video.enlarge-vid {
 
     }
 }
+*/
 @media screen and (max-width:501px){
     video.enlarge-vid {
-    position: absolute;
-    transition: all 400ms;
-    z-index: 1;
-    transform: scale(1.15);
-    max-width: 50vw;
-    right: 15%;
-    top: -5%;
+    /* position: absolute; */
+        transform: scale(2);
+        transition: all 400ms;
+    
     }
-} */
+}
