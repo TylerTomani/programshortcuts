@@ -10,31 +10,19 @@ export function playVids(){
         // vid.controls = true;  // IMPORTANT
         vid.style.width = '100%'; // Optional for responsiveness
         vid.addEventListener('click', e => {
-            e.preventDefault()
-            e.stopPropagation()
             const step = getStep(e.target)
             playing = !playing
-            // toggleVideoSize(e.target)
+            toggleVideoSize(e.target)
             // handleVideo(e,step)
-            console.log('click')
-            enlargeVid(vid)
             
         })
         vid.addEventListener('pointerdown', e => {
-            e.preventDefault()
-            e.stopPropagation()
-            console.log('pointerdown')
-            enlargeVid(vid)
-            // console.log('mousedown')
+            toggleVideoSize(e.target)
+            
+            console.log('mousedown')
         })
 
     })
-    function enlargeVid(vid){
-        if(!vid.classList.contains('enlarge-vid')){
-            vid.classList.add('enlarge-vid')
-            // vid.classList.add('relative')
-        }
-    }
     /**
  When step-txt has focus OR video is clicked
     vid z-index should be higher so 2, and any other one lower
@@ -73,7 +61,7 @@ export function playVids(){
             const step = getStep(el.parentElement)
             if(el.classList.contains('enlarge-vid')){
                 el.classList.remove('enlarge-vid')
-                // step.classList.remove('relative')
+                step.classList.remove('relative')
                 // el.parentElement.classList.remove('')
             }
         })
@@ -94,9 +82,9 @@ export function playVids(){
                 // denlargeAllVideos()
                 e.target.scrollIntoView({behavior: 'smooth', inline: 'end'})
                 playing = true;
-                // if(playing && vid.classList.contains('enlarge-vid')){
-                //     playing = !playing
-                // }
+                if(playing && vid.classList.contains('enlarge-vid')){
+                    playing = !playing
+                }
                 toggleVideoSize(vid);
                 break;
             case 32: // Space
@@ -118,7 +106,7 @@ export function playVids(){
     function toggleVideoSize(vid){
         // denlargeAllVideos()
         const step = getStep(vid.parentElement)
-        // step.classList.toggle('relative')
+        step.classList.toggle('relative')
         vid.classList.toggle('enlarge-vid')
         
     }
