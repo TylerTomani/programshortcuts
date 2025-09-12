@@ -7,7 +7,7 @@ export function playVids(){
     allVideos.forEach(vid => {
         // vid.volume = 0;
         vid.loop = true;
-        vid.controls = true;  // IMPORTANT
+        // vid.controls = true;  // IMPORTANT
         vid.style.width = '100%'; // Optional for responsiveness
         vid.addEventListener('click', e => {
             const step = getStep(e.target)
@@ -16,7 +16,10 @@ export function playVids(){
             handleVideo(e,step)
         })
         vid.addEventListener('mousedown', e => {
-            caches.log('here')
+            caches.log('mousedown')
+        })
+        vid.addEventListener('click', e => {
+            toggleVideoSize(e.target)
         })
     })
     /**
@@ -43,7 +46,7 @@ export function playVids(){
             }
         })
         el.addEventListener('click', e => {            
-            console.log('kjhskfh')
+            stopAllVideos()
         })
         el.addEventListener('keydown', e => {            
             let step = getStep(e.target.parentElement)
