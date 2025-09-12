@@ -46,9 +46,9 @@
 
 }
 #sideBarBtn {
-  position: fixed;
+  position: absolute;
   bottom: 2%;
-  left: 1%;
+  left: 5%;
   z-index: 999;
   font-size: 2rem;
   color: #eee;
@@ -61,11 +61,14 @@
 .side-bar.hide + #sideBarBtn{
   /* color: black; */
   /* position: absolute; */
+  bottom: 2%;
 }
 .side-bar.hide #sideBarBtn {
   color: black !important;
-  /* border: 10px solid magenta; */
+  left: 100%;
+  border: 1px solid rgb(0,0,0,.5) !important;
 }
+
 .side-bar.hide #sideBarBtn:active {
   /* border: none; */
 }
