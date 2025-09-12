@@ -13,14 +13,14 @@ export function playVids(){
             const step = getStep(e.target)
             playing = !playing
             toggleVideoSize(e.target)
-            handleVideo(e,step)
+            // handleVideo(e,step)
+            
         })
-        vid.addEventListener('mousedown', e => {
-            caches.log('mousedown')
-        })
-        vid.addEventListener('click', e => {
+        vid.addEventListener('pointerdown', e => {
             toggleVideoSize(e.target)
+            console.log('mousedown')
         })
+
     })
     /**
  When step-txt has focus OR video is clicked
