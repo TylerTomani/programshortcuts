@@ -7,6 +7,15 @@
   overflow-y: scroll;
   right: 0;
 }
+/* .step {
+    position: relative;    
+}
+.step > .step-vid {
+    float: right;
+}
+.clear {
+    clear: both;
+} */
 h1 {
     text-align: end;
     margin:1% 0;

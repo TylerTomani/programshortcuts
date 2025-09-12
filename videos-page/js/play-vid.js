@@ -16,14 +16,14 @@ export function playVids(){
             playing = !playing
             // toggleVideoSize(e.target)
             // handleVideo(e,step)
-            console.log('click')
+            // console.log('click')
             enlargeVid(vid)
             
         })
         vid.addEventListener('pointerdown', e => {
             e.preventDefault()
             e.stopPropagation()
-            console.log('pointerdown')
+            // console.log('pointerdown')
             enlargeVid(vid)
             // console.log('mousedown')
         })
@@ -59,10 +59,11 @@ export function playVids(){
             }
         })
         el.addEventListener('click', e => {            
-            stopAllVideos()
+            // stopAllVideos()
         })
         el.addEventListener('keydown', e => {            
             let step = getStep(e.target.parentElement)
+            let key = e.key.toLowerCase()
             
             stopAllVideos()
             handleVideo(e,step)

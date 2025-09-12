@@ -71,7 +71,11 @@ export function keyboardNav() {
     })
     document.addEventListener('keydown', e => {
         const key = e.key.toLowerCase();
-
+        if(key === 'm'){
+            console.log('yes')
+            window.scrollTo(0,0)
+            return
+        }
     // rebuild letteredEls fresh on every keypress
         const letteredEls = [...document.querySelectorAll('a, [id], i[id]')].filter(el => {
         const rect = el.getBoundingClientRect();
@@ -82,26 +86,27 @@ export function keyboardNav() {
         rect.height > 0 &&
         el.id[0]?.toLowerCase() === key
         );
-  });
+    });
 
-  // force #sideBarBtn in for key "s"
-  if(key === 's' && sideBarBtn && !letteredEls.includes(sideBarBtn)){
-    letteredEls.unshift(sideBarBtn);
-  }
+    // force #sideBarBtn in for key "s"
+    if(key === 's' && sideBarBtn && !letteredEls.includes(sideBarBtn)){
+        letteredEls.unshift(sideBarBtn);
+    }
 
-  if(letteredEls.length === 0) return;
+    if(letteredEls.length === 0) return;
 
-  // now cycle/focus
-  const active = document.activeElement;
-  const currentIndex = letteredEls.indexOf(active);
-  const nextIndex = e.shiftKey
-    ? (currentIndex - 1 + letteredEls.length) % letteredEls.length
-    : (currentIndex + 1) % letteredEls.length;
-  const nextEl = letteredEls[nextIndex];
-  if(nextEl){
-    if(!nextEl.hasAttribute('tabindex')) nextEl.setAttribute('tabindex','0');
-    nextEl.focus();
-  }
-});
+    // now cycle/focus
+    const active = document.activeElement;
+    const currentIndex = letteredEls.indexOf(active);
+    const nextIndex = e.shiftKey
+        ? (currentIndex - 1 + letteredEls.length) % letteredEls.length
+        : (currentIndex + 1) % letteredEls.length;
+    const nextEl = letteredEls[nextIndex];
+    if(nextEl){
+        if(!nextEl.hasAttribute('tabindex')) nextEl.setAttribute('tabindex','0');
+        nextEl.focus();
+    }
+
+    });
 
 }
