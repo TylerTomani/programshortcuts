@@ -93,7 +93,7 @@ export function playVids(){
         switch (keyCode) {
             case 13: // Enter
                 // denlargeAllVideos()
-                e.target.scrollIntoView({behavior: 'smooth', inline: 'end'})
+                e.target.scrollIntoView({behavior: 'smooth', block: 'center'})
                 playing = true;
                 // if(playing && vid.classList.contains('enlarge-vid')){
                 //     playing = !playing
