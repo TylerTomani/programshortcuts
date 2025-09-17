@@ -1,0 +1,49 @@
+/* step-vid.css */
+.step{
+    display: flex;
+}
+.step > * {
+    flex-basis: 50%;
+}
+.step-vid > video {
+    border: 2px solid blue;
+    z-index: 100
+}
+.step {
+    position: relative;    
+}
+video.enlarge-vid {
+    position: absolute;
+    transition: all 400ms;
+    z-index: 1;
+    transform: scale(1.15);
+    max-width: 50vw;
+    right: 15%;
+    top: -5%;
+}
+#macEssentialVideoPage{
+    border: 2px solid magenta;
+    /* margin-left: 4%; */
+    padding-top:  2%;
+    padding-left: 2%;
+}
+/* @media screen and (max-width:800px){
+    .enlarge-vid {
+        position: absolute;
+        transform: scale(3);
+        right: 5%;
+        top: 50%;
+        transition: all 400ms;
+        z-index: 1;
+
+    }
+}
+*/
+@media screen and (max-width:501px){
+    video.enlarge-vid {
+    /* position: absolute; */
+        transform: scale(2);
+        transition: all 400ms;
+    
+    }
+}

@@ -22,8 +22,7 @@ function openPageLinks(aLinks){
     // comment out Below Here when NOT WORKING on this
     // Use this when working within sidebar link page
     const AllLinks = document.querySelectorAll('a')
-    AllLinks.forEach(el => {
-        
+    AllLinks.forEach(el => {    
         if(el.classList.contains('load-link') && !linkLoaded){
             injectContent(el.href)
             linkLoaded = false
@@ -31,6 +30,7 @@ function openPageLinks(aLinks){
         }
     })
     // comment out Above Here when NOT WORKING on this
+    
     aLinks.forEach(link => {
         if(link.id === 'codeCmdShortcutPage') return
         if(link.hasAttribute('autofocus') && !clickedLink){
